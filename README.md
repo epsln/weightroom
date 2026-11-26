@@ -1,5 +1,7 @@
 # Weightroom
 
+[![CI](https://github.com/epsln/weightroom/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/epsln/weightroom/actions/workflows/ci.yml)
+
 Self-hosted dashboard for gym progress, built from your [Boostcamp](https://www.boostcamp.app) history.
 
 - PRs for squat, bench and deadlift: heaviest set, best e1RM (Brzycki), best set volume, best session volume, and 1/3/5/8/10RM.
@@ -63,6 +65,25 @@ docker compose up -d --build
 Open <http://localhost:8000>. The SQLite database lives in the `weightroom-data` volume.
 
 The dashboard has **no authentication**. Keep it on your LAN or put it behind a reverse proxy with auth.
+
+Prebuilt images are published to GHCR:
+
+```sh
+docker pull ghcr.io/epsln/weightroom:latest   # latest release (also :X.Y.Z, :X.Y)
+docker pull ghcr.io/epsln/weightroom:develop  # tip of develop
+```
+
+## Branching and releases
+
+The project uses gitflow. CI (`.github/workflows/ci.yml`) runs ruff and pytest on the backend, and oxlint and the build on the frontend, for every PR into `develop`/`main` and every push to `main`, `develop`, `release/*` and `hotfix/*`.
+
+| Branch | Image tags published |
+|---|---|
+| `develop` | `develop`, `sha-<short>` |
+| `release/X.Y.Z`, `hotfix/X.Y.Z` | `X.Y.Z-rc`, `sha-<short>` |
+| PR from `release/X.Y.Z` or `hotfix/X.Y.Z` merged into `main` | tag `vX.Y.Z` is created automatically, and `X.Y.Z`, `X.Y`, `latest` are published with a GitHub release |
+
+To release: branch `release/X.Y.Z` from `develop`, open a PR into `main` and merge it, then merge `main` back into `develop`. Don't tag by hand; release and hotfix branches must be named exactly `X.Y.Z`.
 
 ## Development
 
