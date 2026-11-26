@@ -57,7 +57,6 @@ def prs(conn: sqlite3.Connection, today: date | None = None) -> dict:
             "best_set_volume": _best_set(conn, lift, "s.volume_kg DESC"),
             "best_session_volume": dict(session_row) if session_row else None,
             "estimated_1rm": est,
-            "best_single": _best_set(conn, lift, "s.weight_kg DESC", "AND s.reps = 1"),
             "days_since_pr": days_since[lift],
             # N-RM = heaviest weight lifted for at least N reps.
             "rep_maxes": {
@@ -213,11 +212,17 @@ def lift_estimate(conn: sqlite3.Connection, lift: str) -> dict:
 
 
 def actual_maxes(conn: sqlite3.Connection, lift: str) -> list[dict]:
-    """Every single (1-rep set) for the lift, with a running best and PR flag."""
+    """Heaviest set (any reps) of each session, with a running best and PR flag.
+
+    A set of 150 x 2 proves a 150 kg single just as well as 150 x 1, so reps don't matter here.
+    """
+    top: dict[str, sqlite3.Row] = {}
+    for r in _lift_sets(conn, lift):  # chronological, so dict order follows sessions
+        cur = top.get(r["session_id"])
+        if cur is None or (r["weight_kg"], r["reps"]) > (cur["weight_kg"], cur["reps"]):
+            top[r["session_id"]] = r
     out, best = [], 0.0
-    for r in _lift_sets(conn, lift):
-        if r["reps"] != 1:
-            continue
+    for r in top.values():
         is_pr = r["weight_kg"] > best
         best = max(best, r["weight_kg"])
         out.append({**_set_row(r), "is_pr": is_pr, "running_best_kg": best})
@@ -279,15 +284,13 @@ def pr_timeline(conn: sqlite3.Connection, today: date | None = None) -> dict:
     events: list[dict] = []
     last: dict[str, str | None] = {}
     for lift in LIFTS:
-        best_e1rm = best_single = best_vol = 0.0
+        best_e1rm = best_vol = 0.0
         best_rm = dict.fromkeys(REP_MAX_TABLE, 0.0)
         last[lift] = None
         for r in _lift_sets(conn, lift):
             base = {"lift": lift, **_set_row(r)}
             found = []
-            if r["reps"] == 1 and r["weight_kg"] > best_single:
-                found.append(("single", r["weight_kg"], best_single))
-                best_single = r["weight_kg"]
+            # 1RM (heaviest weight for >= 1 rep) is part of REP_MAX_TABLE.
             for n in REP_MAX_TABLE:
                 if r["reps"] >= n and r["weight_kg"] > best_rm[n]:
                     found.append((f"{n}RM", r["weight_kg"], best_rm[n]))
@@ -336,9 +339,9 @@ def _bw_at(bw: list[dict], d: str) -> float | None:
 
 
 def total_series(conn: sqlite3.Connection, sex: str = "m") -> list[dict]:
-    """Per training date: estimated SBD total and best-ever actual singles total, with DOTS."""
+    """Per training date: estimated SBD total and best-ever actual total (heaviest set, any reps), with DOTS."""
     obs = {lift: _obs(_lift_sets(conn, lift)) for lift in LIFTS}
-    singles = {lift: [(o.date, o.weight_kg) for o in obs[lift] if o.reps == 1] for lift in LIFTS}
+    singles = {lift: [(o.date, o.weight_kg) for o in obs[lift] if o.reps >= 1] for lift in LIFTS}
     bw = list_bodyweight(conn)
     dates = sorted({o.date for lift in LIFTS for o in obs[lift]})
     out = []

@@ -9,7 +9,7 @@ Model, for a given lift and date:
      (1/sqrt(reps): low-rep sets are better max predictors).
   4. Take a weighted high percentile (default p90). Back-off / volume work is intentionally
      submaximal, so a mean would systematically under-estimate.
-  5. Floor at the heaviest actual single in the window: you can't be weaker than what you lifted.
+  5. Floor at the heaviest weight lifted (any reps) in the window: you can't be weaker than what you lifted.
 """
 
 from __future__ import annotations
@@ -70,11 +70,12 @@ def estimate_1rm(
     for s in sets:
         if not (start < s.date <= as_of):
             continue
+        if s.reps >= 1:
+            # Any completed rep proves at least that weight as a single.
+            best_single = max(best_single, s.weight_kg)
         e = set_e1rm(s.weight_kg, s.reps, max_reps)
         if e is None:
             continue
-        if s.reps == 1:
-            best_single = max(best_single, s.weight_kg)
         age = (as_of - s.date).days
         w = math.pow(0.5, age / half_life_days) / math.sqrt(s.reps)
         obs.append((e, w))

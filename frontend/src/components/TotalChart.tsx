@@ -57,7 +57,7 @@ export function TotalChart({ version, formula, onSettings }: { version: number; 
             <Legend />
             <Line yAxisId="kg" dataKey="est" name="Estimated total" stroke="#22c55e" strokeWidth={2}
               dot={false} connectNulls isAnimationActive={false} />
-            <Line yAxisId="kg" type="stepAfter" dataKey="act" name="Actual total (best singles)" stroke="#eab308"
+            <Line yAxisId="kg" type="stepAfter" dataKey="act" name="Actual total (heaviest sets)" stroke="#eab308"
               strokeDasharray="4 3" dot={false} connectNulls isAnimationActive={false} />
             {hasDots && (
               <Line yAxisId="dots" dataKey="dotsEst" name="DOTS (est.)" stroke="#94a3b8" dot={false}

@@ -29,7 +29,6 @@ export interface LiftPrs {
   best_session_volume: SessionVolumeRef | null
   rep_maxes: Record<string, SetRef | null>
   estimated_1rm: EstimatePoint | null
-  best_single: SetRef | null
   days_since_pr: number | null
 }
 export type Prs = Record<Lift, LiftPrs>
