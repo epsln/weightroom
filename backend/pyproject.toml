@@ -5,6 +5,7 @@ description = "Self-hosted gym progress dashboard built from Boostcamp history"
 requires-python = ">=3.12"
 dependencies = [
     "apscheduler>=3.11.3,<4",
+    "cryptography>=50.0.2",
     "fastapi>=0.165.0",
     "httpx>=0.28.1",
     "uvicorn[standard]>=0.54.0",

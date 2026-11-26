@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { api, bigKg, fmtDate, kg, type SessionDetail } from '../api'
+import { api, bigKg, fmtDate, kg, wr, type SessionDetail } from '../api'
 import { LIFT_COLOR } from '../colors'
 import { useAsync } from '../useAsync'
 
@@ -50,7 +50,7 @@ export function SessionDrawer({ id, onClose }: { id: string; onClose: () => void
                   </h3>
                   <span className="muted small">
                     {bigKg(ex.volume_kg)}
-                    {ex.best_e1rm_kg != null && ` · e1RM ${kg(Math.round(ex.best_e1rm_kg * 10) / 10)}`}
+                    {ex.best_e1rm_kg != null && ` · e1RM ${kg(ex.best_e1rm_kg)}`}
                   </span>
                 </header>
                 <table className="sets">
@@ -64,7 +64,7 @@ export function SessionDrawer({ id, onClose }: { id: string; onClose: () => void
                         <td className="num">{kg(st.weight_kg)}</td>
                         <td className="num">{st.reps}</td>
                         <td className="num">{bigKg(st.volume_kg)}</td>
-                        <td className="num muted">{st.e1rm_kg != null ? Math.round(st.e1rm_kg * 10) / 10 : '–'}</td>
+                        <td className="num muted">{st.e1rm_kg != null ? wr(st.e1rm_kg) : '–'}</td>
                       </tr>
                     ))}
                   </tbody>

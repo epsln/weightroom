@@ -2,7 +2,7 @@ import { useState } from 'react'
 import {
   CartesianGrid, ComposedChart, Line, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis,
 } from 'recharts'
-import { api, fmtDate, LIFT_LABEL, LIFTS, shortDate, tooltipStyle, ts, type ActualMax, type Lift } from '../api'
+import { api, du, fmtDate, unit, wr, LIFT_LABEL, LIFTS, shortDate, tooltipStyle, ts, type ActualMax, type Lift } from '../api'
 import { LIFT_COLOR } from '../colors'
 import { useAsync } from '../useAsync'
 import { DragZoom, useRange } from '../range'
@@ -21,7 +21,7 @@ export function ActualMaxChart({ version, onOpen }: { version: number; onOpen: (
   const res = useAsync<ActualMax[]>(() => api.actualMaxes(lift), [lift, version])
   const { range } = useRange()
   const all: Pt[] = (res.data ?? []).map((m) => ({
-    t: ts(m.date), w: m.weight_kg, best: m.running_best_kg, is_pr: m.is_pr, session_id: m.session_id,
+    t: ts(m.date), w: wr(m.weight_kg), best: wr(m.running_best_kg), is_pr: m.is_pr, session_id: m.session_id,
   }))
   const pts = all.filter((p) => within(range, p.t))
   const prs = pts.filter((p) => p.is_pr)
@@ -37,7 +37,7 @@ export function ActualMaxChart({ version, onOpen }: { version: number; onOpen: (
       <header className="card-head">
         <h2>
           Actual singles
-          {all.length > 0 && <span className="muted small"> · best {all.at(-1)!.best} kg</span>}
+          {all.length > 0 && <span className="muted small"> · best {du(all.at(-1)!.best)}</span>}
         </h2>
         <div className="toggles">
           {LIFTS.map((l) => (
@@ -57,10 +57,10 @@ export function ActualMaxChart({ version, onOpen }: { version: number; onOpen: (
               <CartesianGrid stroke="var(--grid)" vertical={false} />
               <XAxis dataKey="t" type="number" scale="time" domain={xDomain(range)} allowDataOverflow
                 tickFormatter={shortDate} stroke="var(--muted)" fontSize={12} />
-              <YAxis unit=" kg" domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
+              <YAxis unit={` ${unit()}`} domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
               <Tooltip contentStyle={tooltipStyle}
                 labelFormatter={(t) => fmtDate(new Date(Number(t)).toISOString())}
-                formatter={(v, name) => [`${v} kg`, name]} />
+                formatter={(v, name) => [du(Number(v)), name]} />
               <Line type="stepAfter" dataKey="best" name="Running best" stroke={color} strokeDasharray="4 3"
                 dot={false} isAnimationActive={false} />
               <Scatter data={other} dataKey="w" name="Single" fill={color} fillOpacity={0.45}

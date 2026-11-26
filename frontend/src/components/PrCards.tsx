@@ -1,4 +1,4 @@
-import { bigKg, fmtDate, kg, LIFT_LABEL, LIFTS, type Lift, type LiftPrs, type Prs, type SetRef } from '../api'
+import { bigKg, fmtDate, kg, unit, wr, LIFT_LABEL, LIFTS, type Lift, type LiftPrs, type Prs, type SetRef } from '../api'
 
 function PrRow({ label, value, sub, onOpen, sessionId }: {
   label: string
@@ -32,14 +32,14 @@ function PrCard({ lift, prs, onOpen }: { lift: Lift; prs: LiftPrs; onOpen: (id: 
       <header className="pr-head">
         <h3>{LIFT_LABEL[lift]}</h3>
         <div className="pr-hero" title="Rolling estimate from the last 6 weeks of training">
-          <span className="pr-hero-value">{est ? Math.round(est.e1rm_kg * 10) / 10 : '–'}</span>
-          <span className="muted"> kg est. 1RM</span>
+          <span className="pr-hero-value">{est ? wr(est.e1rm_kg) : '–'}</span>
+          <span className="muted"> {unit()} est. 1RM</span>
         </div>
       </header>
       <PrRow label="Best single" value={setStr(prs.best_single)}
         sub={prs.best_single ? fmtDate(prs.best_single.date) : undefined}
         sessionId={prs.best_single?.session_id} onOpen={onOpen} />
-      <PrRow label="Best e1RM" value={e1rm?.e1rm_kg != null ? `${Math.round(e1rm.e1rm_kg * 10) / 10} kg` : '–'}
+      <PrRow label="Best e1RM" value={e1rm?.e1rm_kg != null ? kg(e1rm.e1rm_kg) : '–'}
         sub={e1rm ? `${setStr(e1rm)}, ${fmtDate(e1rm.date)}` : undefined}
         sessionId={e1rm?.session_id} onOpen={onOpen} />
       <PrRow label="Heaviest" value={setStr(prs.heaviest)} sub={prs.heaviest ? fmtDate(prs.heaviest.date) : undefined}
@@ -67,7 +67,7 @@ function PrCard({ lift, prs, onOpen }: { lift: Lift; prs: LiftPrs; onOpen: (id: 
                 {s ? (
                   <button className="link" onClick={() => onOpen(s.session_id)}
                     title={`${setStr(s)} on ${fmtDate(s.date)}`}>
-                    {s.weight_kg}
+                    {wr(s.weight_kg)}
                   </button>
                 ) : (
                   '–'

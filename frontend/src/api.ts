@@ -80,6 +80,50 @@ export interface BodyweightEntry {
   kg: number
 }
 export type Sex = 'm' | 'f'
+export type ProfileSex = Sex | 'other'
+export type Units = 'kg' | 'lb'
+export type LiftMap = Record<Lift, string[]>
+
+export interface Profile {
+  name: string | null
+  sex: ProfileSex | null
+  dots_formula: Sex
+  units: Units
+  height_cm: number | null
+  birth_year: number | null
+  training_start: string | null
+  sync_interval_hours: number
+  onboarded_at: string | null
+  onboarded: boolean
+  lift_map: LiftMap
+  boostcamp: {
+    configured: boolean
+    source: 'env' | 'db' | null
+    token_hint: string | null
+    decrypt_error: boolean
+  }
+}
+
+export interface ProfileUpdate {
+  name?: string | null
+  sex?: ProfileSex
+  dots_formula?: Sex
+  units?: Units
+  height_cm?: number | null
+  birth_year?: number | null
+  training_start?: string | null
+  sync_interval_hours?: number
+  lift_map?: LiftMap
+  bodyweight?: { date: string; kg: number }
+  complete?: boolean
+}
+
+export interface ExerciseName {
+  exercise: string
+  lift: Lift | null
+  sets: number
+  last_date: string
+}
 
 export interface SessionSummary {
   id: string
@@ -176,7 +220,7 @@ export const api = {
   intensity: (weeks: number, lift?: Lift) =>
     request<IntensityWeek[]>(`/api/intensity?weeks=${weeks}${lift ? `&lift=${lift}` : ''}`),
   prTimeline: () => request<PrTimeline>('/api/prs/timeline'),
-  total: (sex: Sex) => request<TotalPoint[]>(`/api/total?sex=${sex}`),
+  total: () => request<TotalPoint[]>('/api/total'),
   bodyweight: () => request<BodyweightEntry[]>('/api/bodyweight'),
   addBodyweight: (date: string, kg: number) =>
     request<BodyweightEntry[]>('/api/bodyweight', {
@@ -187,13 +231,48 @@ export const api = {
   deleteBodyweight: (date: string) => request<BodyweightEntry[]>(`/api/bodyweight/${date}`, { method: 'DELETE' }),
   sync: () => request<SyncRow>('/api/sync', { method: 'POST' }),
   syncStatus: () => request<SyncStatus>('/api/sync/status'),
+  profile: () => request<Profile>('/api/profile'),
+  updateProfile: (body: ProfileUpdate) =>
+    request<Profile>('/api/profile', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    }),
+  exercises: () => request<ExerciseName[]>('/api/exercises'),
+  setCredentials: (refresh_token: string, api_key: string) =>
+    request<Profile>('/api/boostcamp/credentials', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ refresh_token, api_key }),
+    }),
+  clearCredentials: () => request<Profile>('/api/boostcamp/credentials', { method: 'DELETE' }),
 }
 
-const kgFmt = new Intl.NumberFormat(undefined, { maximumFractionDigits: 2 })
+// --- Display units ----------------------------------------------------------
+// The backend always speaks kg. The UI converts at the edges. App sets the unit
+// from the profile and remounts the dashboard when it changes.
+export const LB_PER_KG = 2.20462
+let UNITS: Units = 'kg'
+export const setUnits = (u: Units) => {
+  UNITS = u
+}
+export const unit = () => UNITS
+/** kg -> display unit. */
+export const w = (kgVal: number) => (UNITS === 'lb' ? kgVal * LB_PER_KG : kgVal)
+/** kg -> display unit, rounded to 0.1. */
+export const wr = (kgVal: number) => Math.round(w(kgVal) * 10) / 10
+/** display unit -> kg. */
+export const toKg = (v: number) => (UNITS === 'lb' ? v / LB_PER_KG : v)
+
+const kgFmt = new Intl.NumberFormat(undefined, { maximumFractionDigits: 1 })
 const bigFmt = new Intl.NumberFormat(undefined, { maximumFractionDigits: 0 })
 
-export const kg = (n: number | null | undefined) => (n == null ? '–' : `${kgFmt.format(n)} kg`)
-export const bigKg = (n: number | null | undefined) => (n == null ? '–' : `${bigFmt.format(n)} kg`)
+/** Format a kg value in the user's display unit. */
+export const kg = (n: number | null | undefined) => (n == null ? '–' : `${kgFmt.format(w(n))} ${UNITS}`)
+export const bigKg = (n: number | null | undefined) => (n == null ? '–' : `${bigFmt.format(w(n))} ${UNITS}`)
+/** Format a value that is already in display units. */
+export const du = (n: number | null | undefined) => (n == null ? '–' : `${kgFmt.format(n)} ${UNITS}`)
+export const bigDu = (n: number | null | undefined) => (n == null ? '–' : `${bigFmt.format(n)} ${UNITS}`)
 
 /** ISO date string → ms timestamp at local midnight. */
 export const ts = (iso: string) => new Date(`${iso.slice(0, 10)}T00:00:00`).getTime()

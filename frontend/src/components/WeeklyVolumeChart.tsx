@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-import { api, ts, bigKg, fmtDate, LIFT_LABEL, type WeekVolume } from '../api'
+import { api, ts, bigDu, bigKg, fmtDate, LIFT_LABEL, unit, wr, type WeekVolume } from '../api'
 import { LIFT_COLOR } from '../colors'
 import { useAsync } from '../useAsync'
 import { useRange } from '../range'
@@ -9,14 +9,17 @@ import { weeksSince, within } from '../rangeUtils'
 const RANGES = [12, 26, 52] as const
 const STACKS = ['squat', 'bench', 'deadlift', 'other'] as const
 
-const tonnes = (v: number) => (v >= 1000 ? `${Math.round(v / 100) / 10}t` : `${v}`)
+const tonnes = (v: number) => (v >= 1000 ? `${Math.round(v / 100) / 10}${unit() === 'lb' ? 'k' : 't'}` : `${v}`)
 
 export function WeeklyVolumeChart({ version }: { version: number }) {
   const [weeks, setWeeks] = useState<number>(12)
   const { range } = useRange()
   const effWeeks = range.from != null ? weeksSince(range.from) : weeks
   const res = useAsync<WeekVolume[]>(() => api.weekly(effWeeks), [effWeeks, version])
-  const data = res.data?.filter((w) => within({ from: range.from == null ? null : range.from - 6 * 86400000, to: range.to }, ts(w.week_start))).map((w) => ({ ...w, label: `W${w.iso_week}` }))
+  const data = res.data?.filter((w) => within({ from: range.from == null ? null : range.from - 6 * 86400000, to: range.to }, ts(w.week_start))).map((wk) => ({
+    ...wk, label: `W${wk.iso_week}`,
+    squat: wr(wk.squat), bench: wr(wk.bench), deadlift: wr(wk.deadlift), other: wr(wk.other),
+  }))
   const current = res.data?.at(-1)
 
   return (
@@ -48,7 +51,7 @@ export function WeeklyVolumeChart({ version }: { version: number }) {
                 const w = p?.[0]?.payload as WeekVolume | undefined
                 return w ? `Week of ${fmtDate(w.week_start)} · ${w.sessions} sessions · ${bigKg(w.total)}` : ''
               }}
-              formatter={(v, name) => [bigKg(Number(v)), name]}
+              formatter={(v, name) => [bigDu(Number(v)), name]}
             />
             <Legend />
             {STACKS.map((k) => (

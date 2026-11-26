@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-import { api, fmtDate, kg, shortDate, tooltipStyle, ts, type BodyweightEntry } from '../api'
+import { api, du, fmtDate, kg, toKg, unit, wr, shortDate, tooltipStyle, ts, type BodyweightEntry } from '../api'
 import { useAsync } from '../useAsync'
 import { DragZoom, useRange } from '../range'
 import { within, xDomain } from '../rangeUtils'
@@ -31,11 +31,11 @@ export function BodyweightPanel({ version, onChanged }: { version: number; onCha
     e.preventDefault()
     const n = Number(value.replace(',', '.'))
     if (!n) return
-    void run(api.addBodyweight(date, n)).then(() => setValue(''))
+    void run(api.addBodyweight(date, Math.round(toKg(n) * 100) / 100)).then(() => setValue(''))
   }
   const entries = res.data ?? []
   const { range } = useRange()
-  const data = entries.map((b) => ({ t: ts(b.date), kg: b.kg })).filter((p) => within(range, p.t))
+  const data = entries.map((b) => ({ t: ts(b.date), kg: wr(b.kg) })).filter((p) => within(range, p.t))
 
   return (
     <section className="card">
@@ -46,7 +46,7 @@ export function BodyweightPanel({ version, onChanged }: { version: number; onCha
         </h2>
         <form className="toggles" onSubmit={submit}>
           <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-          <input type="number" step="0.1" min="20" max="400" placeholder="kg" value={value}
+          <input type="number" step="0.1" min={Math.ceil(wr(20.1))} max={Math.floor(wr(399))} placeholder={unit()} value={value}
             onChange={(e) => setValue(e.target.value)} required style={{ width: 80 }} />
           <button className="chip on" type="submit">Save</button>
         </form>
@@ -59,9 +59,9 @@ export function BodyweightPanel({ version, onChanged }: { version: number; onCha
               <CartesianGrid stroke="var(--grid)" vertical={false} />
               <XAxis dataKey="t" type="number" scale="time" domain={xDomain(range)} allowDataOverflow
                 tickFormatter={shortDate} stroke="var(--muted)" fontSize={12} />
-              <YAxis unit=" kg" domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
+              <YAxis unit={` ${unit()}`} domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
               <Tooltip contentStyle={tooltipStyle} labelFormatter={(t) => fmtDate(new Date(Number(t)).toISOString())}
-                formatter={(v) => [kg(Number(v)), 'Bodyweight']} />
+                formatter={(v) => [du(Number(v)), 'Bodyweight']} />
               <Line dataKey="kg" stroke="#e2e8f0" dot={{ r: 2 }} isAnimationActive={false} />
               <DragZoom />
             </LineChart>

@@ -1,7 +1,7 @@
 """CLI helpers.
 
     uv run python -m app.cli import <history.json>   # load a saved history response
-    uv run python -m app.cli sync                    # one-off sync using .env credentials
+    uv run python -m app.cli sync                    # one-off sync using .env or in-app credentials
 """
 
 from __future__ import annotations
@@ -13,7 +13,9 @@ import json
 from .auth import TokenManager
 from .boostcamp import import_history, run_sync
 from .config import Settings
+from .crypto import load_cipher
 from .db import connect, init_schema
+from .profile import credentials, save_refresh_token
 
 
 def main() -> None:
@@ -33,7 +35,9 @@ def main() -> None:
             seen = import_history(conn, json.load(fh))
         print(f"Imported {seen} sessions into {settings.database_path}")
     else:
-        tokens = TokenManager(settings.refresh_token, settings.firebase_api_key)
+        cipher = load_cipher(settings)
+        refresh, api_key, _ = credentials(conn, settings, cipher)
+        tokens = TokenManager(refresh, api_key, on_rotate=lambda t: save_refresh_token(conn, cipher, t))
         result = asyncio.run(run_sync(conn, tokens, settings.timezone_offset))
         print(json.dumps(result, indent=2))
         raise SystemExit(0 if result["ok"] else 1)

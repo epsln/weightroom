@@ -53,6 +53,14 @@ class Settings:
     database_path: str
     frontend_dist: str
     sync_on_startup: bool
+    secret: str = ""
+
+    @property
+    def secret_key_path(self) -> str | None:
+        """Where the auto-generated encryption key lives when WEIGHTROOM_SECRET is unset."""
+        if self.database_path == ":memory:":
+            return None
+        return str(Path(self.database_path).parent / "secret.key")
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -66,8 +74,10 @@ class Settings:
             frontend_dist=os.environ.get("FRONTEND_DIST", "").strip()
             or str(_REPO_ROOT / "frontend" / "dist"),
             sync_on_startup=os.environ.get("SYNC_ON_STARTUP", "1").strip() != "0",
+            secret=os.environ.get("WEIGHTROOM_SECRET", "").strip(),
         )
 
     @property
     def has_credentials(self) -> bool:
+        """True when Boostcamp credentials come from the environment (they win over the DB)."""
         return bool(self.refresh_token and self.firebase_api_key)

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { api, fmtRelative, type SyncStatus } from '../api'
 import { useAsync } from '../useAsync'
 
-export function SyncBar({ version, onSynced }: { version: number; onSynced: () => void }) {
+export function SyncBar({ version, onSynced, onSettings }: { version: number; onSynced: () => void; onSettings: () => void }) {
   const [busy, setBusy] = useState(false)
   const [syncError, setSyncError] = useState<string>()
   const status = useAsync<SyncStatus>(() => api.syncStatus(), [version])
@@ -30,12 +30,12 @@ export function SyncBar({ version, onSynced }: { version: number; onSynced: () =
         <span className="muted">Last sync</span>{' '}
         <span title={last?.last_success_at ?? undefined}>{fmtRelative(last?.last_success_at)}</span>
         {status.data && !status.data.configured && (
-          <span className="badge warn" title="Set BOOSTCAMP_REFRESH_TOKEN and FIREBASE_API_KEY in .env">
-            not configured
-          </span>
+          <button className="badge warn link" onClick={onSettings} title="Connect Boostcamp in Settings">
+            not connected
+          </button>
         )}
       </div>
-      <button className="btn" onClick={syncNow} disabled={busy}>
+      <button className="btn" onClick={syncNow} disabled={busy || status.data?.configured === false}>
         {busy ? 'Syncing…' : 'Sync now'}
       </button>
       {lastError && (

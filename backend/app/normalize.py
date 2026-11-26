@@ -30,8 +30,8 @@ def brzycki(weight_kg: float, reps: int) -> float | None:
     return round(weight_kg * 36 / (37 - reps), 2)
 
 
-def lift_for(exercise: str) -> str | None:
-    return LIFT_MAP.get(exercise.strip())
+def lift_for(exercise: str, mapping: dict[str, str] | None = None) -> str | None:
+    return (LIFT_MAP if mapping is None else mapping).get(exercise.strip())
 
 
 def _num(value: Any) -> float | None:
@@ -58,7 +58,7 @@ def normalize_set(raw: dict) -> tuple[float, int] | None:
     return weight_kg, int(reps)
 
 
-def normalize_session(raw: dict) -> tuple[dict, list[dict]]:
+def normalize_session(raw: dict, mapping: dict[str, str] | None = None) -> tuple[dict, list[dict]]:
     finished_at = raw.get("finished_at") or ""
     day = date.fromisoformat(finished_at[:10])
     iso = day.isocalendar()
@@ -74,7 +74,7 @@ def normalize_session(raw: dict) -> tuple[dict, list[dict]]:
     sets: list[dict] = []
     for ex_idx, record in enumerate(raw.get("records") or []):
         exercise = (record.get("name") or "").strip() or "Unknown"
-        lift = lift_for(exercise)
+        lift = lift_for(exercise, mapping)
         for set_idx, raw_set in enumerate(record.get("sets") or []):
             parsed = normalize_set(raw_set)
             if parsed is None:
@@ -97,11 +97,17 @@ def normalize_session(raw: dict) -> tuple[dict, list[dict]]:
 
 
 def rebuild(conn: sqlite3.Connection) -> int:
-    """Fully rebuild `sessions` and `sets` from `raw_sessions`. Returns session count."""
+    """Fully rebuild `sessions` and `sets` from `raw_sessions`. Returns session count.
+
+    Uses the lift mapping from the user profile (defaults to config.LIFT_MAP).
+    """
+    from .profile import exercise_to_lift
+
+    mapping = exercise_to_lift(conn)
     rows = conn.execute("SELECT payload FROM raw_sessions").fetchall()
     sessions, sets = [], []
     for row in rows:
-        s, ss = normalize_session(json.loads(row[0]))
+        s, ss = normalize_session(json.loads(row[0]), mapping)
         sessions.append(s)
         sets.extend(ss)
     with conn:

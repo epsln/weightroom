@@ -1,26 +1,18 @@
-import { useState } from 'react'
 import {
   CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts'
-import { api, bigKg, fmtDate, shortDate, tooltipStyle, ts, type Sex, type TotalPoint } from '../api'
+import { api, bigDu, bigKg, fmtDate, shortDate, tooltipStyle, ts, unit, wr, type Sex, type TotalPoint } from '../api'
 import { useAsync } from '../useAsync'
 import { DragZoom, useRange } from '../range'
 import { within, xDomain } from '../rangeUtils'
 
-const SEX_KEY = 'weightroom.sex'
-
-export function TotalChart({ version }: { version: number }) {
-  const [sex, setSexState] = useState<Sex>(() => (localStorage.getItem(SEX_KEY) === 'f' ? 'f' : 'm'))
-  const setSex = (s: Sex) => {
-    localStorage.setItem(SEX_KEY, s)
-    setSexState(s)
-  }
-  const res = useAsync<TotalPoint[]>(() => api.total(sex), [sex, version])
+export function TotalChart({ version, formula, onSettings }: { version: number; formula: Sex; onSettings: () => void }) {
+  const res = useAsync<TotalPoint[]>(() => api.total(), [formula, version])
   const { range } = useRange()
   const data = (res.data ?? []).filter((p) => within(range, ts(p.date))).map((p) => ({
     t: ts(p.date),
-    est: p.estimated.total != null ? Math.round(p.estimated.total) : null,
-    act: p.actual.total,
+    est: p.estimated.total != null ? Math.round(wr(p.estimated.total)) : null,
+    act: p.actual.total != null ? wr(p.actual.total) : null,
     dotsEst: p.dots_estimated,
     dotsAct: p.dots_actual,
   }))
@@ -41,8 +33,9 @@ export function TotalChart({ version }: { version: number }) {
           )}
         </h2>
         <div className="toggles">
-          <button className={`chip ${sex === 'm' ? 'on' : ''}`} onClick={() => setSex('m')}>M</button>
-          <button className={`chip ${sex === 'f' ? 'on' : ''}`} onClick={() => setSex('f')}>F</button>
+          <button className="chip" onClick={onSettings} title="DOTS formula is set in Settings">
+            DOTS: {formula === 'f' ? 'female' : 'male'}
+          </button>
         </div>
       </header>
       {!hasDots && res.data && <p className="muted small">Add your bodyweight below to see DOTS.</p>}
@@ -53,14 +46,14 @@ export function TotalChart({ version }: { version: number }) {
             <CartesianGrid stroke="var(--grid)" vertical={false} />
             <XAxis dataKey="t" type="number" scale="time" domain={xDomain(range)} allowDataOverflow
               tickFormatter={shortDate} stroke="var(--muted)" fontSize={12} />
-            <YAxis yAxisId="kg" unit=" kg" domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={70} />
+            <YAxis yAxisId="kg" unit={` ${unit()}`} domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={70} />
             {hasDots && (
               <YAxis yAxisId="dots" orientation="right" domain={['auto', 'auto']} stroke="var(--muted)"
                 fontSize={12} width={44} />
             )}
             <Tooltip contentStyle={tooltipStyle}
               labelFormatter={(t) => fmtDate(new Date(Number(t)).toISOString())}
-              formatter={(v, name) => [String(name).includes('DOTS') ? v : bigKg(Number(v)), name]} />
+              formatter={(v, name) => [String(name).includes('DOTS') ? v : bigDu(Number(v)), name]} />
             <Legend />
             <Line yAxisId="kg" dataKey="est" name="Estimated total" stroke="#22c55e" strokeWidth={2}
               dot={false} connectNulls isAnimationActive={false} />

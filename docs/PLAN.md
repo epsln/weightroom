@@ -60,7 +60,7 @@ set:     value, amount (planned/prefilled; may be STALE),
 | bench    | `Bench Press (Barbell)`, `Bench Press`      |
 | deadlift | `Deadlift (Barbell)`, `Deadlift`            |
 
-Everything else (Front/Low Bar/Paused/Tempo Squat, Close Grip/Larsen/Spoto/Dumbbell bench, Sumo/Romanian/Paused/Deficit deadlift, …) gets `lift = NULL`. Those sets still count toward session and weekly volume. Keep the mapping in `config.py` so it is easy to edit.
+Everything else (Front/Low Bar/Paused/Tempo Squat, Close Grip/Larsen/Spoto/Dumbbell bench, Sumo/Romanian/Paused/Deficit deadlift, …) gets `lift = NULL`. Those sets still count toward session and weekly volume. The table above is the default in `config.py`. Users can change it in onboarding or Settings; it is stored in `profile.lift_map` and saving it triggers `normalize.rebuild()`.
 
 ### Estimated 1RM
 - Use Brzycki, to match Boostcamp: `e1RM = w × 36 / (37 − reps)`.
@@ -111,6 +111,10 @@ sets(id INTEGER PRIMARY KEY, session_id TEXT REFERENCES sessions(id),
      weight_kg REAL, reps INT, volume_kg REAL, e1rm_kg REAL NULL)
 sync_log(id INTEGER PRIMARY KEY, started_at TEXT, finished_at TEXT,
          ok INT, sessions_seen INT, error TEXT NULL)
+profile(id = 1, name, sex m|f|other, dots_formula m|f, units kg|lb, height_cm, birth_year,
+        training_start, sync_interval_hours, lift_map JSON,
+        refresh_token_enc, api_key_enc,  -- Fernet; key = WEIGHTROOM_SECRET or data/secret.key
+        onboarded_at, updated_at)
 ```
 Each sync upserts `raw_sessions` and then fully rebuilds `sessions` and `sets` from it. This makes syncs idempotent, so normalization rules can change without re-fetching.
 
@@ -147,6 +151,12 @@ Each sync upserts `raw_sessions` and then fully rebuilds `sessions` and `sets` f
    - "Sync now" button and last-sync time
 10. **Docker:** multi-stage Dockerfile (Node build stage, then Python runtime) and docker-compose. Write a README covering token setup.
 
+## Onboarding & profile
+- On first load the SPA calls `GET /api/profile`. While `onboarded` is false it shows a 4-step wizard (about you, body & units, Boostcamp, lifts) instead of the dashboard. Each step saves with `PUT /api/profile`, and the last one sends `complete: true`.
+- With sex "other", the user picks the DOTS formula. `/api/total` uses `profile.dots_formula` unless `?sex=` is given.
+- Units are display-only. The API stays in kg, and the frontend converts with helpers in `api.ts` (`kg()`, `wr()`, `toKg()`).
+- Credentials: `.env` wins. Otherwise they are stored encrypted. The scheduler always runs and skips while unconfigured. Rotated refresh tokens are persisted.
+
 ## Environment (`.env.example`)
 ```
 BOOSTCAMP_REFRESH_TOKEN=
@@ -154,6 +164,7 @@ FIREBASE_API_KEY=
 TIMEZONE_OFFSET=1
 SYNC_INTERVAL_HOURS=6
 DATABASE_PATH=/data/weightroom.db
+WEIGHTROOM_SECRET=
 ```
 
 ## Notes and risks

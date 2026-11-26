@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-import { api, LIFT_LABEL, LIFTS, tooltipStyle, type Lift, type RepCurvePoint } from '../api'
+import { api, du, LIFT_LABEL, unit, wr, LIFTS, tooltipStyle, type Lift, type RepCurvePoint } from '../api'
 import { LIFT_COLOR } from '../colors'
 import { useAsync } from '../useAsync'
 
@@ -26,12 +26,17 @@ export function RepCurveChart({ version }: { version: number }) {
       {res.error && <p className="error">{res.error}</p>}
       <div className="chart">
         <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={res.data} margin={{ top: 8, right: 16, bottom: 0, left: 0 }}>
+          <LineChart data={res.data?.map((p) => ({
+            reps: p.reps,
+            all: p.all == null ? null : wr(p.all),
+            d90: p.d90 == null ? null : wr(p.d90),
+            d30: p.d30 == null ? null : wr(p.d30),
+          }))} margin={{ top: 8, right: 16, bottom: 0, left: 0 }}>
             <CartesianGrid stroke="var(--grid)" vertical={false} />
             <XAxis dataKey="reps" stroke="var(--muted)" fontSize={12} tickFormatter={(r) => `${r}RM`} />
-            <YAxis unit=" kg" domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
+            <YAxis unit={` ${unit()}`} domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
             <Tooltip contentStyle={tooltipStyle} labelFormatter={(r) => `${r} reps`}
-              formatter={(v, name) => [v == null ? '–' : `${v} kg`, name]} />
+              formatter={(v, name) => [v == null ? '–' : du(Number(v)), name]} />
             <Legend />
             <Line dataKey="all" name="All time" stroke={color} strokeWidth={2} isAnimationActive={false} connectNulls />
             <Line dataKey="d90" name="Last 90 days" stroke={color} strokeOpacity={0.7} strokeDasharray="6 3"

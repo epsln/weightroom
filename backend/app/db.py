@@ -45,6 +45,25 @@ CREATE TABLE IF NOT EXISTS bodyweight (
     kg   REAL NOT NULL
 );
 
+-- Single-row user profile (id is always 1). Boostcamp secrets are Fernet-encrypted.
+CREATE TABLE IF NOT EXISTS profile (
+    id                  INTEGER PRIMARY KEY CHECK (id = 1),
+    name                TEXT NULL,
+    sex                 TEXT NULL CHECK (sex IN ('m', 'f', 'other')),
+    dots_formula        TEXT NOT NULL DEFAULT 'm' CHECK (dots_formula IN ('m', 'f')),
+    units               TEXT NOT NULL DEFAULT 'kg' CHECK (units IN ('kg', 'lb')),
+    height_cm           REAL NULL,
+    birth_year          INT NULL,
+    training_start      TEXT NULL,
+    sync_interval_hours INT NULL,
+    lift_map            JSON NULL,
+    refresh_token_enc   TEXT NULL,
+    api_key_enc         TEXT NULL,
+    onboarded_at        TEXT NULL,
+    updated_at          TEXT NULL
+);
+INSERT OR IGNORE INTO profile (id) VALUES (1);
+
 CREATE TABLE IF NOT EXISTS sync_log (
     id            INTEGER PRIMARY KEY,
     started_at    TEXT NOT NULL,

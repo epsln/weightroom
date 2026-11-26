@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { api, fmtDate, ts, kg, LIFT_LABEL, LIFTS, type Lift, type PrTimeline as Timeline } from '../api'
+import { api, fmtDate, ts, kg, wr, LIFT_LABEL, LIFTS, type Lift, type PrTimeline as Timeline } from '../api'
 import { LIFT_COLOR } from '../colors'
 import { useAsync } from '../useAsync'
 import { useRange } from '../range'
@@ -41,10 +41,10 @@ export function PrTimeline({ version, onOpen }: { version: number; onOpen: (id: 
                 <td>{fmtDate(e.date)}</td>
                 <td style={{ color: LIFT_COLOR[e.lift] }}>{LIFT_LABEL[e.lift]}</td>
                 <td>{e.kind}</td>
-                <td>{kg(Math.round(e.value * 10) / 10)}</td>
+                <td>{kg(e.value)}</td>
                 <td className="muted">{kg(e.weight_kg)} × {e.reps}</td>
                 <td className="muted">
-                  {e.previous != null ? `${kg(Math.round(e.previous * 10) / 10)} (+${Math.round((e.value - e.previous) * 10) / 10})` : 'first'}
+                  {e.previous != null ? `${kg(e.previous)} (+${wr(e.value - e.previous)})` : 'first'}
                 </td>
               </tr>
             ))}

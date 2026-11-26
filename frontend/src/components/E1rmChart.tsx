@@ -2,7 +2,7 @@ import { useState } from 'react'
 import {
   CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis,
 } from 'recharts'
-import { api, fmtDate, LIFT_LABEL, LIFTS, shortDate, tooltipStyle, ts, type Lift } from '../api'
+import { api, du, fmtDate, kg, unit, wr, LIFT_LABEL, LIFTS, shortDate, tooltipStyle, ts, type Lift } from '../api'
 import { useAsync } from '../useAsync'
 import { LIFT_COLOR } from '../colors'
 import { DragZoom, useRange } from '../range'
@@ -14,8 +14,6 @@ interface Pt {
   session_id?: string
   note?: string
 }
-
-const r1 = (n: number) => Math.round(n * 10) / 10
 
 interface LiftData {
   estimate: Pt[]
@@ -29,15 +27,15 @@ async function load(): Promise<Record<Lift, LiftData>> {
     LIFTS.map(async (l) => {
       const [est, hist, singles] = await Promise.all([api.estimate(l), api.liftHistory(l), api.actualMaxes(l)])
       out[l] = {
-        estimate: est.series.map((p) => ({ t: ts(p.date), v: r1(p.e1rm_kg), note: 'rolling estimate' })),
+        estimate: est.series.map((p) => ({ t: ts(p.date), v: wr(p.e1rm_kg), note: 'rolling estimate' })),
         sessions: hist
           .filter((h) => h.best_e1rm_kg != null)
           .map((h) => ({
-            t: ts(h.date), v: r1(h.best_e1rm_kg!), session_id: h.session_id,
-            note: h.top_set ? `best set e1RM · top ${h.top_set.weight_kg} kg × ${h.top_set.reps}` : 'best set e1RM',
+            t: ts(h.date), v: wr(h.best_e1rm_kg!), session_id: h.session_id,
+            note: h.top_set ? `best set e1RM · top ${kg(h.top_set.weight_kg)} × ${h.top_set.reps}` : 'best set e1RM',
           })),
         singles: singles.map((s) => ({
-          t: ts(s.date), v: s.weight_kg, session_id: s.session_id, note: s.is_pr ? 'actual single · PR' : 'actual single',
+          t: ts(s.date), v: wr(s.weight_kg), session_id: s.session_id, note: s.is_pr ? 'actual single · PR' : 'actual single',
         })),
       }
     }),
@@ -84,10 +82,10 @@ export function E1rmChart({ version, onOpen }: { version: number; onOpen: (id: s
             <CartesianGrid stroke="var(--grid)" vertical={false} />
             <XAxis dataKey="t" type="number" scale="time" domain={xDomain(range)} allowDataOverflow
               tickFormatter={shortDate} stroke="var(--muted)" fontSize={12} allowDuplicatedCategory={false} />
-            <YAxis dataKey="v" unit=" kg" domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
+            <YAxis dataKey="v" unit={` ${unit()}`} domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
             <Tooltip contentStyle={tooltipStyle}
               labelFormatter={(t) => fmtDate(new Date(Number(t)).toISOString())}
-              formatter={(v, name, item) => [`${v} kg (${(item.payload as Pt).note ?? ''})`, name]} />
+              formatter={(v, name, item) => [`${du(Number(v))} (${(item.payload as Pt).note ?? ''})`, name]} />
             <Legend />
             {res.data &&
               LIFTS.filter((l) => shown[l]).flatMap((l) => [

@@ -373,3 +373,13 @@ def last_sync(conn: sqlite3.Connection) -> dict | None:
     ).fetchone()
     out["last_success_at"] = ok[0] if ok else None
     return out
+
+
+def exercise_names(conn: sqlite3.Connection) -> list[dict]:
+    """Distinct exercise names seen in history (for the lift-mapping picker)."""
+    rows = conn.execute(
+        """SELECT exercise, lift, COUNT(*) AS sets, MAX(s.date) AS last_date
+           FROM sets JOIN sessions s ON s.id = sets.session_id
+           GROUP BY exercise ORDER BY sets DESC"""
+    ).fetchall()
+    return [dict(r) for r in rows]

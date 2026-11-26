@@ -147,3 +147,137 @@ def test_fetch_history_accepts_2xx(status, history):
 
     body = asyncio.run(fetch_history(FakeTokens(), 1, client=_mock_client(handler)))
     assert body["data"].keys() == history["data"].keys()
+
+
+# --- profile / onboarding -------------------------------------------------
+
+def test_profile_defaults_and_onboarding(client):
+    p = client.get("/api/profile").json()
+    assert p["onboarded"] is False and p["units"] == "kg" and p["dots_formula"] == "m"
+    assert p["boostcamp"] == {"configured": False, "source": None, "token_hint": None, "decrypt_error": False}
+    assert "Squat (Barbell)" in p["lift_map"]["squat"]
+
+    p = client.put("/api/profile", json={
+        "name": "Sam", "sex": "f", "units": "lb", "height_cm": 170, "birth_year": 1990,
+        "training_start": "2024-03-01", "sync_interval_hours": 12,
+        "bodyweight": {"date": "2026-01-01", "kg": 65}, "complete": True,
+    }).json()
+    assert p["onboarded"] and p["sex"] == "f" and p["dots_formula"] == "f" and p["units"] == "lb"
+    assert p["sync_interval_hours"] == 12 and p["training_start"] == "2024-03-01"
+    assert client.get("/api/bodyweight").json() == [{"date": "2026-01-01", "kg": 65.0}]
+    assert client.get("/api/sync/status").json()["interval_hours"] == 12
+    # Partial update keeps other fields.
+    assert client.put("/api/profile", json={"name": "S"}).json()["units"] == "lb"
+
+
+def test_profile_other_requires_formula(client):
+    assert client.put("/api/profile", json={"sex": "other"}).status_code == 422
+    p = client.put("/api/profile", json={"sex": "other", "dots_formula": "f"}).json()
+    assert p["sex"] == "other" and p["dots_formula"] == "f"
+    assert client.put("/api/profile", json={"units": "stone"}).status_code == 422
+    assert client.put("/api/profile", json={"height_cm": 20}).status_code == 422
+
+
+def test_total_uses_profile_formula(client):
+    client.post("/api/bodyweight", json={"date": "2020-01-01", "kg": 80})
+    m = client.get("/api/total").json()
+    client.put("/api/profile", json={"sex": "other", "dots_formula": "f"})
+    f = client.get("/api/total").json()
+    assert f == client.get("/api/total?sex=f").json() and f != m
+
+
+def test_lift_map_rebuilds(client):
+    names = {e["exercise"] for e in client.get("/api/exercises").json()}
+    assert "Squat (Barbell)" in names
+    assert client.get("/api/lifts/squat/history").json()
+    client.put("/api/profile", json={"lift_map": {"squat": [], "bench": ["Bench Press (Barbell)"], "deadlift": []}})
+    assert client.get("/api/lifts/squat/history").json() == []
+    ex = {e["exercise"]: e["lift"] for e in client.get("/api/exercises").json()}
+    assert ex["Squat (Barbell)"] is None
+
+
+TOKEN = "AMf-refresh-token-0123456789abcd"
+
+
+def test_credentials_encrypted_and_never_returned(client, monkeypatch):
+    async def ok(refresh, key):
+        return refresh
+
+    monkeypatch.setattr("app.api.verify_credentials", ok)
+    p = client.put("/api/boostcamp/credentials", json={"refresh_token": TOKEN, "api_key": "AIzaSyTestKey"}).json()
+    assert p["boostcamp"] == {"configured": True, "source": "db", "token_hint": "…abcd", "decrypt_error": False}
+    assert client.get("/api/sync/status").json()["configured"] is True
+    conn = client.app.state.conn
+    row = conn.execute("SELECT refresh_token_enc, api_key_enc FROM profile").fetchone()
+    assert row[0] and TOKEN not in row[0] and "AIzaSyTestKey" not in row[1]
+    for path in ("/api/profile", "/api/sync/status"):
+        assert TOKEN not in client.get(path).text
+    p = client.delete("/api/boostcamp/credentials").json()
+    assert p["boostcamp"]["configured"] is False
+    assert client.get("/api/sync/status").json()["configured"] is False
+
+
+def test_credentials_rejected(client, monkeypatch):
+    async def bad(refresh, key):
+        raise BoostcampAuthError("INVALID_REFRESH_TOKEN")
+
+    monkeypatch.setattr("app.api.verify_credentials", bad)
+    r = client.put("/api/boostcamp/credentials", json={"refresh_token": TOKEN, "api_key": "AIzaSyTestKey"})
+    assert r.status_code == 400
+    assert client.get("/api/profile").json()["boostcamp"]["configured"] is False
+
+
+def test_env_credentials_win(tmp_path):
+    app = create_app(make_settings(tmp_path, refresh_token=TOKEN, firebase_api_key="k" * 12), enable_scheduler=False)
+    with TestClient(app) as c:
+        assert c.get("/api/profile").json()["boostcamp"]["source"] == "env"
+        r = c.put("/api/boostcamp/credentials", json={"refresh_token": TOKEN, "api_key": "AIzaSyTestKey"})
+        assert r.status_code == 409
+
+
+def test_credentials_survive_restart_and_key_file(tmp_path, monkeypatch):
+    async def ok(refresh, key):
+        return refresh
+
+    monkeypatch.setattr("app.api.verify_credentials", ok)
+    settings = make_settings(tmp_path)
+    with TestClient(create_app(settings, enable_scheduler=False)) as c:
+        c.put("/api/boostcamp/credentials", json={"refresh_token": TOKEN, "api_key": "AIzaSyTestKey"})
+    key = tmp_path / "secret.key"
+    assert key.is_file() and (key.stat().st_mode & 0o777) == 0o600
+    with TestClient(create_app(settings, enable_scheduler=False)) as c:
+        assert c.get("/api/profile").json()["boostcamp"]["token_hint"] == "…abcd"
+    key.unlink()  # lost key -> stored secrets unreadable, reported instead of crashing
+    with TestClient(create_app(settings, enable_scheduler=False)) as c:
+        b = c.get("/api/profile").json()["boostcamp"]
+        assert b["configured"] is False and b["decrypt_error"] is True
+
+
+def test_explicit_secret(tmp_path, monkeypatch):
+    async def ok(refresh, key):
+        return refresh
+
+    monkeypatch.setattr("app.api.verify_credentials", ok)
+    settings = make_settings(tmp_path, secret="s3cret")
+    with TestClient(create_app(settings, enable_scheduler=False)) as c:
+        c.put("/api/boostcamp/credentials", json={"refresh_token": TOKEN, "api_key": "AIzaSyTestKey"})
+    assert not (tmp_path / "secret.key").exists()
+    with TestClient(create_app(settings, enable_scheduler=False)) as c:
+        assert c.get("/api/profile").json()["boostcamp"]["configured"] is True
+
+
+def test_token_rotation_callback():
+    import asyncio
+
+    seen = []
+
+    def handler(request):
+        return httpx.Response(200, json={"id_token": "id", "expires_in": 3600, "refresh_token": "new"})
+
+    async def go():
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as http:
+            tm = TokenManager("old", "key", client=http, on_rotate=seen.append)
+            return await tm.get_id_token()
+
+    assert asyncio.run(go()) == "id"
+    assert seen == ["new"]

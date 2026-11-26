@@ -12,12 +12,13 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
-from . import stats
-from .auth import TokenManager
+from . import normalize, profile, stats
+from .auth import BoostcampAuthError, TokenManager, verify_credentials
 from .boostcamp import run_sync
 from .config import LIFTS, Settings
+from .crypto import load_cipher
 from .db import connect, init_schema
-from .scheduler import create_scheduler
+from .scheduler import create_scheduler, reschedule
 
 Day = date
 
@@ -27,25 +28,62 @@ class BodyweightIn(BaseModel):
     kg: float = Field(gt=20, lt=400)
 
 
+Lift = Literal["squat", "bench", "deadlift"]
+
+
+class ProfileIn(BaseModel):
+    """Partial update: only fields that are sent are changed."""
+
+    name: str | None = Field(None, max_length=60)
+    sex: Literal["m", "f", "other"] | None = None
+    dots_formula: Literal["m", "f"] | None = None
+    units: Literal["kg", "lb"] | None = None
+    height_cm: float | None = Field(None, ge=100, le=250)
+    birth_year: int | None = Field(None, ge=1900, le=2100)
+    training_start: Day | None = None
+    sync_interval_hours: int | None = Field(None, ge=1, le=168)
+    lift_map: dict[Lift, list[str]] | None = None
+    bodyweight: BodyweightIn | None = None
+    complete: bool = False
+
+
+class CredentialsIn(BaseModel):
+    refresh_token: str = Field(min_length=20, max_length=4096)
+    api_key: str = Field(min_length=10, max_length=200)
+
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+# httpx logs full URLs at INFO, which include the Firebase API key as a query param.
+logging.getLogger("httpx").setLevel(logging.WARNING)
 
 
 def create_app(settings: Settings | None = None, enable_scheduler: bool = True) -> FastAPI:
     settings = settings or Settings.from_env()
     conn = connect(settings.database_path)
     init_schema(conn)
-    tokens = TokenManager(settings.refresh_token, settings.firebase_api_key)
+    cipher = load_cipher(settings)
+    refresh, api_key, source = profile.credentials(conn, settings, cipher)
+
+    def persist_rotated(new_token: str) -> None:
+        # Only DB-stored tokens are persisted; .env is the user's to manage.
+        if profile.credentials(conn, settings, cipher)[2] == "db":
+            profile.save_refresh_token(conn, cipher, new_token)
+
+    tokens = TokenManager(refresh, api_key, on_rotate=persist_rotated)
+    state: dict = {"scheduler": None}
 
     @asynccontextmanager
     async def lifespan(_: FastAPI):
-        scheduler = create_scheduler(conn, tokens, settings) if enable_scheduler else None
-        if scheduler:
-            scheduler.start()
+        if enable_scheduler:
+            state["scheduler"] = create_scheduler(
+                conn, tokens, settings, lambda: profile.sync_interval(conn, settings)
+            )
+            state["scheduler"].start()
         try:
             yield
         finally:
-            if scheduler:
-                scheduler.shutdown(wait=False)
+            if state["scheduler"]:
+                state["scheduler"].shutdown(wait=False)
             conn.close()
 
     app = FastAPI(title="Weightroom", lifespan=lifespan)
@@ -112,8 +150,8 @@ def create_app(settings: Settings | None = None, enable_scheduler: bool = True) 
         return stats.pr_timeline(conn, today=local_today())
 
     @app.get("/api/total")
-    async def get_total(sex: Literal["m", "f"] = "m"):
-        return stats.total_series(conn, sex)
+    async def get_total(sex: Literal["m", "f"] | None = None):
+        return stats.total_series(conn, sex or profile.dots_formula(conn))
 
     @app.get("/api/bodyweight")
     async def get_bodyweight():
@@ -138,9 +176,55 @@ def create_app(settings: Settings | None = None, enable_scheduler: bool = True) 
     async def get_sync_status():
         return {
             "last": stats.last_sync(conn),
-            "configured": settings.has_credentials,
-            "interval_hours": settings.sync_interval_hours,
+            "configured": tokens.configured,
+            "interval_hours": profile.sync_interval(conn, settings),
         }
+
+    @app.get("/api/profile")
+    async def get_profile():
+        return profile.public(conn, settings, cipher)
+
+    @app.put("/api/profile")
+    async def put_profile(body: ProfileIn):
+        fields = body.model_dump(exclude_unset=True, exclude={"bodyweight", "complete"})
+        if fields.get("sex") == "other" and "dots_formula" not in fields:
+            raise HTTPException(422, "Choose a DOTS formula (m or f) when sex is 'other'")
+        old_map = profile.lift_map(conn)
+        old_interval = profile.sync_interval(conn, settings)
+        profile.update(conn, fields, complete=body.complete)
+        if body.bodyweight:
+            stats.set_bodyweight(conn, body.bodyweight.date, body.bodyweight.kg)
+        if profile.lift_map(conn) != old_map:
+            normalize.rebuild(conn)
+        new_interval = profile.sync_interval(conn, settings)
+        if new_interval != old_interval:
+            reschedule(state["scheduler"], new_interval)
+        return profile.public(conn, settings, cipher)
+
+    @app.get("/api/exercises")
+    async def get_exercises():
+        return stats.exercise_names(conn)
+
+    @app.put("/api/boostcamp/credentials")
+    async def put_credentials(body: CredentialsIn):
+        if settings.has_credentials:
+            raise HTTPException(409, "Credentials are set in the environment (.env); edit them there")
+        refresh_token, api_key = body.refresh_token.strip(), body.api_key.strip()
+        try:
+            refresh_token = await verify_credentials(refresh_token, api_key)
+        except BoostcampAuthError as exc:
+            raise HTTPException(400, f"Boostcamp rejected these credentials: {exc}") from exc
+        profile.save_credentials(conn, cipher, refresh_token, api_key)
+        tokens.set_credentials(refresh_token, api_key)
+        return profile.public(conn, settings, cipher)
+
+    @app.delete("/api/boostcamp/credentials")
+    async def delete_credentials():
+        if settings.has_credentials:
+            raise HTTPException(409, "Credentials are set in the environment (.env); remove them there")
+        profile.clear_credentials(conn)
+        tokens.set_credentials("", "")
+        return profile.public(conn, settings, cipher)
 
     @app.api_route("/api/{_path:path}", methods=["GET", "POST", "PUT", "DELETE", "PATCH"])
     async def api_not_found(_path: str):
