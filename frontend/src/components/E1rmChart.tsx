@@ -2,10 +2,10 @@ import { useState } from 'react'
 import {
   CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis,
 } from 'recharts'
-import { api, du, fmtDate, kg, unit, wr, LIFT_LABEL, LIFTS, shortDate, tooltipStyle, ts, type Lift } from '../api'
+import { api, du, fmtDate, kg, unit, wr, LIFT_LABEL, LIFTS, tooltipStyle, ts, type Lift } from '../api'
 import { useAsync } from '../useAsync'
 import { LIFT_COLOR } from '../colors'
-import { DragZoom, useRange } from '../range'
+import { AxisCaption, DragZoom, useRange, useTimeAxis } from '../range'
 import { within, xDomain } from '../rangeUtils'
 
 interface Pt {
@@ -82,6 +82,7 @@ export function E1rmChart({ version, onOpen }: { version: number; onOpen: (id: s
   const res = useAsync(load, [version])
   const { range } = useRange()
   const f = (pts: Pt[]) => pts.filter((p) => within(range, p.t))
+  const axis = useTimeAxis(LIFTS.flatMap((l) => (res.data ? f(res.data[l].sessions).map((p) => p.t) : [])))
 
   return (
     <section className="card">
@@ -109,7 +110,7 @@ export function E1rmChart({ version, onOpen }: { version: number; onOpen: (id: s
           <ComposedChart margin={{ top: 8, right: 16, bottom: 0, left: 0 }}>
             <CartesianGrid stroke="var(--grid)" vertical={false} />
             <XAxis dataKey="t" type="number" scale="time" domain={xDomain(range)} allowDataOverflow
-              tickFormatter={shortDate} stroke="var(--muted)" fontSize={12} allowDuplicatedCategory={false} />
+              ticks={axis.ticks} tickFormatter={axis.format} stroke="var(--muted)" fontSize={12} allowDuplicatedCategory={false} />
             <YAxis dataKey="v" unit={` ${unit()}`} domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
             <Tooltip content={E1rmTooltip} />
             <Legend />
@@ -129,6 +130,7 @@ export function E1rmChart({ version, onOpen }: { version: number; onOpen: (id: s
             <DragZoom />
           </ComposedChart>
         </ResponsiveContainer>
+        <AxisCaption axis={axis} />
       </div>
     </section>
   )

@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { usePlotArea, useXAxisInverseScale } from 'recharts'
+import { timeAxis, type TimeAxis } from './timeTicks'
 import { ALL, DAY, isAll, midnight, TODAY, type DateRange } from './rangeUtils'
 
 interface Ctx {
@@ -137,4 +138,22 @@ export function DragZoom({ xAxisId }: { xAxisId?: string | number }) {
       )}
     </g>
   )
+}
+
+/** Calendar-aligned axis for the visible span: the selected range, open ends filled from the data. */
+export function useTimeAxis(times: number[]): TimeAxis {
+  const { range } = useRange()
+  let lo = range.from
+  let hi = range.to
+  for (const t of times) {
+    if (range.from == null && (lo == null || t < lo)) lo = t
+    if (range.to == null && (hi == null || t > hi)) hi = t
+  }
+  lo ??= TODAY
+  hi ??= lo
+  return timeAxis(lo, hi)
+}
+
+export function AxisCaption({ axis }: { axis: TimeAxis }) {
+  return axis.caption ? <div className="axis-caption muted small">{axis.caption}</div> : null
 }
