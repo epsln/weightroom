@@ -4,7 +4,7 @@
 
 Self-hosted dashboard for gym progress, built from your [Boostcamp](https://www.boostcamp.app) history.
 
-- PRs for squat, bench and deadlift: heaviest set, best e1RM (Brzycki), best set volume, best session volume, and 1/3/5/8/10RM.
+- PRs for squat, bench and deadlift: heaviest set, best e1RM (Brzycki), best set volume, best session volume, and 1/3/5/8/10RM. "Actual max" means the heaviest weight lifted for any number of reps.
 - e1RM trend chart, weekly volume split by lift, and session history with a per-session detail view.
 - Syncs with Boostcamp at startup and every `SYNC_INTERVAL_HOURS`, or on demand with **Sync now**.
 

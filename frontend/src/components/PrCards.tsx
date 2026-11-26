@@ -36,14 +36,11 @@ function PrCard({ lift, prs, onOpen }: { lift: Lift; prs: LiftPrs; onOpen: (id: 
           <span className="muted"> {unit()} est. 1RM</span>
         </div>
       </header>
-      <PrRow label="Best single" value={setStr(prs.best_single)}
-        sub={prs.best_single ? fmtDate(prs.best_single.date) : undefined}
-        sessionId={prs.best_single?.session_id} onOpen={onOpen} />
+      <PrRow label="Heaviest" value={setStr(prs.heaviest)} sub={prs.heaviest ? fmtDate(prs.heaviest.date) : undefined}
+        sessionId={prs.heaviest?.session_id} onOpen={onOpen} />
       <PrRow label="Best e1RM" value={e1rm?.e1rm_kg != null ? kg(e1rm.e1rm_kg) : '–'}
         sub={e1rm ? `${setStr(e1rm)}, ${fmtDate(e1rm.date)}` : undefined}
         sessionId={e1rm?.session_id} onOpen={onOpen} />
-      <PrRow label="Heaviest" value={setStr(prs.heaviest)} sub={prs.heaviest ? fmtDate(prs.heaviest.date) : undefined}
-        sessionId={prs.heaviest?.session_id} onOpen={onOpen} />
       <PrRow label="Set volume" value={prs.best_set_volume ? bigKg(prs.best_set_volume.volume_kg) : '–'}
         sub={prs.best_set_volume ? fmtDate(prs.best_set_volume.date) : undefined}
         sessionId={prs.best_set_volume?.session_id} onOpen={onOpen} />

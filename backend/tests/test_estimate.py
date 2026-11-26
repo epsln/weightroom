@@ -38,12 +38,19 @@ def test_floored_by_actual_single():
 
 
 def test_window_and_recency():
-    old = SetObs(D0, 150, 3)
+    old = SetObs(D0, 130, 8)
     assert estimate_1rm([old], D0 + timedelta(days=60)) is None
-    recent = SetObs(D0 + timedelta(days=30), 120, 3)
-    # Recent sets weigh more, so a mid percentile picks the newer, lighter set.
+    recent = SetObs(D0 + timedelta(days=30), 135, 2)
+    # Recent sets weigh more, so a mid percentile picks the newer set over the older, higher-e1RM one.
+    assert set_e1rm(130, 8) > set_e1rm(135, 2)
     assert estimate_1rm([old, recent], D0 + timedelta(days=30), percentile=0.5) == pytest.approx(
-        set_e1rm(120, 3), abs=0.01)
+        set_e1rm(135, 2), abs=0.01)
+
+
+def test_floor_at_heaviest_weight_any_reps():
+    # 150 x 2 proves at least 150 even if the weighted estimate would land lower.
+    sets = [SetObs(D0, 100, 10)] * 20 + [SetObs(D0, 150, 2)]
+    assert estimate_1rm(sets, D0, percentile=0.1) == 150
 
 
 def test_ignores_future_and_high_reps():
@@ -77,9 +84,23 @@ def _add_single(conn, lift, day, kg):
 def test_actual_maxes_running_best(conn):
     for day, kg in [("2026-01-01", 100), ("2026-02-01", 95), ("2026-03-01", 105)]:
         _add_single(conn, "squat", day, kg)
+    # The fixture's 2025 squat session (top set 92.5 x 7) comes first.
     am = stats.actual_maxes(conn, "squat")
-    assert [m["is_pr"] for m in am] == [True, False, True]
-    assert [m["running_best_kg"] for m in am] == [100, 100, 105]
+    assert [(m["weight_kg"], m["is_pr"]) for m in am] == [(92.5, True), (100, True), (95, False), (105, True)]
+    assert [m["running_best_kg"] for m in am] == [92.5, 100, 100, 105]
+
+
+def test_actual_maxes_counts_multi_rep_sets(conn):
+    _add_single(conn, "deadlift", "2027-01-01", 140)
+    sid = "multi-2027-01-08"
+    conn.execute("INSERT INTO sessions(id, finished_at, date, iso_year, iso_week) VALUES (?,?,?,?,?)",
+                 (sid, "2027-01-08", "2027-01-08", 2027, 1))
+    for i, (kg, reps) in enumerate([(130, 5), (150, 2), (150, 2)]):
+        conn.execute("""INSERT INTO sets(session_id, exercise_idx, exercise, lift, set_idx, weight_kg, reps,
+                        volume_kg, e1rm_kg) VALUES (?,0,'x','deadlift',?,?,?,?,NULL)""",
+                     (sid, i, kg, reps, kg * reps))
+    last = stats.actual_maxes(conn, "deadlift")[-1]
+    assert (last["weight_kg"], last["reps"], last["is_pr"]) == (150, 2, True)
 
 
 def test_rep_curve(conn):
@@ -106,6 +127,8 @@ def test_intensity_and_total(conn):
         _add_single(conn, lift, "2026-11-25", 100)
     stats.set_bodyweight(conn, date(2026, 1, 1), 80)
     last = stats.total_series(conn)[-1]
-    assert last["actual"]["total"] == 300
-    assert last["dots_actual"] == pytest.approx(dots(300, 80), abs=0.01)
+    # Deadlift keeps the fixture's 125 kg multi-rep set: any reps count toward the actual total.
+    assert last["actual"]["deadlift"] == 125
+    assert last["actual"]["total"] == 325
+    assert last["dots_actual"] == pytest.approx(dots(325, 80), abs=0.01)
     assert last["estimated"]["total"] is not None

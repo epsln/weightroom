@@ -34,8 +34,9 @@ async function load(): Promise<Record<Lift, LiftData>> {
             t: ts(h.date), v: wr(h.best_e1rm_kg!), session_id: h.session_id,
             note: h.top_set ? `best set e1RM · top ${kg(h.top_set.weight_kg)} × ${h.top_set.reps}` : 'best set e1RM',
           })),
-        singles: singles.map((s) => ({
-          t: ts(s.date), v: wr(s.weight_kg), session_id: s.session_id, note: s.is_pr ? 'actual single · PR' : 'actual single',
+        singles: singles.filter((s) => s.is_pr).map((s) => ({
+          t: ts(s.date), v: wr(s.weight_kg), session_id: s.session_id,
+          note: `new heaviest · ${kg(s.weight_kg)} × ${s.reps}`,
         })),
       }
     }),
@@ -46,6 +47,33 @@ async function load(): Promise<Record<Lift, LiftData>> {
 const openFrom = (onOpen: (id: string) => void) => (p: unknown) => {
   const id = (p as { payload?: Pt }).payload?.session_id
   if (id) onOpen(id)
+}
+
+interface TipItem {
+  name?: string | number
+  dataKey?: unknown
+  value?: unknown
+  color?: string
+  payload?: Pt
+}
+
+// Scatter points put both axes (t and v) in the tooltip payload, named after their
+// dataKeys. Drop the x row (the date is already the label) and show the y row unnamed.
+function E1rmTooltip({ active, payload, label }: { active?: boolean; payload?: readonly TipItem[]; label?: unknown }) {
+  if (!active || !payload?.length) return null
+  const rows = payload.filter((p) => p.dataKey !== 't')
+  const t = payload[0].payload?.t ?? label
+  return (
+    <div style={{ ...tooltipStyle, padding: '8px 10px' }}>
+      {t != null && <div style={{ marginBottom: 4 }}>{fmtDate(new Date(Number(t)).toISOString())}</div>}
+      {rows.map((p, i) => (
+        <div key={i} style={{ color: p.color }}>
+          {p.name !== 'v' && `${p.name}: `}
+          {du(Number(p.value))}{p.payload?.note ? ` (${p.payload.note})` : ''}
+        </div>
+      ))}
+    </div>
+  )
 }
 
 export function E1rmChart({ version, onOpen }: { version: number; onOpen: (id: string) => void }) {
@@ -73,7 +101,7 @@ export function E1rmChart({ version, onOpen }: { version: number; onOpen: (id: s
       </header>
       <p className="muted small">
         Line: rolling estimate (last 6 weeks, recent and low-rep sets weigh more). Faint dots: best single-set
-        e1RM per session. Diamonds: actual singles.
+        e1RM per session. Diamonds: new heaviest weight lifted (any reps).
       </p>
       {res.error && <p className="error">{res.error}</p>}
       <div className="chart">
@@ -83,9 +111,7 @@ export function E1rmChart({ version, onOpen }: { version: number; onOpen: (id: s
             <XAxis dataKey="t" type="number" scale="time" domain={xDomain(range)} allowDataOverflow
               tickFormatter={shortDate} stroke="var(--muted)" fontSize={12} allowDuplicatedCategory={false} />
             <YAxis dataKey="v" unit={` ${unit()}`} domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
-            <Tooltip contentStyle={tooltipStyle}
-              labelFormatter={(t) => fmtDate(new Date(Number(t)).toISOString())}
-              formatter={(v, name, item) => [`${du(Number(v))} (${(item.payload as Pt).note ?? ''})`, name]} />
+            <Tooltip content={E1rmTooltip} />
             <Legend />
             {res.data &&
               LIFTS.filter((l) => shown[l]).flatMap((l) => [
@@ -96,7 +122,7 @@ export function E1rmChart({ version, onOpen }: { version: number; onOpen: (id: s
                 ),
                 <Line key={`${l}-e`} name={LIFT_LABEL[l]} data={f(res.data![l].estimate)} dataKey="v"
                   stroke={LIFT_COLOR[l]} strokeWidth={2.5} dot={false} isAnimationActive={false} />,
-                <Scatter key={`${l}-1`} name={`${LIFT_LABEL[l]} singles`} data={f(res.data![l].singles)} dataKey="v"
+                <Scatter key={`${l}-1`} name={`${LIFT_LABEL[l]} heaviest`} data={f(res.data![l].singles)} dataKey="v"
                   fill={LIFT_COLOR[l]} shape="diamond" legendType="none" isAnimationActive={false}
                   cursor="pointer" onClick={openFrom(onOpen)} />,
               ])}

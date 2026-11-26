@@ -41,7 +41,8 @@ def test_api_endpoints(client):
 
 def test_stats_endpoints(client):
     assert client.get("/api/lifts/squat/estimate").json()["current"] is not None
-    assert client.get("/api/lifts/squat/actual-maxes").json() == []
+    am = client.get("/api/lifts/squat/actual-maxes").json()
+    assert [(m["weight_kg"], m["reps"], m["is_pr"]) for m in am] == [(92.5, 7, True)]
     assert len(client.get("/api/lifts/bench/rep-curve").json()) == 12
     assert client.get("/api/lifts/curl/estimate").status_code == 404
     assert len(client.get("/api/intensity?weeks=4&lift=deadlift").json()) == 4
@@ -49,7 +50,7 @@ def test_stats_endpoints(client):
     assert client.get("/api/total?sex=f").status_code == 200
     assert client.get("/api/total?sex=x").status_code == 422
     prs = client.get("/api/prs").json()["squat"]
-    assert prs["estimated_1rm"] and prs["best_single"] is None
+    assert prs["estimated_1rm"] and "best_single" not in prs
 
 
 def test_bodyweight_crud(client):
