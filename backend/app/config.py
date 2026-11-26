@@ -63,7 +63,7 @@ class Settings:
         return str(Path(self.database_path).parent / "secret.key")
 
     @classmethod
-    def from_env(cls) -> "Settings":
+    def from_env(cls) -> Settings:
         return cls(
             refresh_token=os.environ.get("BOOSTCAMP_REFRESH_TOKEN", "").strip(),
             firebase_api_key=os.environ.get("FIREBASE_API_KEY", "").strip(),

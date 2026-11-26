@@ -12,8 +12,9 @@ from __future__ import annotations
 import json
 import math
 import sqlite3
+from collections.abc import Iterable
 from datetime import date
-from typing import Any, Iterable
+from typing import Any
 
 from .config import E1RM_MAX_REPS, LB_PER_KG, LIFT_MAP, WEIGHT_STEP_KG
 

@@ -9,11 +9,11 @@ from app.config import Settings
 
 
 def make_settings(tmp_path, **kw):
-    base = dict(
-        refresh_token="", firebase_api_key="", timezone_offset=1, sync_interval_hours=6,
-        database_path=str(tmp_path / "t.db"), frontend_dist=str(tmp_path / "nodist"),
-        sync_on_startup=False,
-    )
+    base = {
+        "refresh_token": "", "firebase_api_key": "", "timezone_offset": 1, "sync_interval_hours": 6,
+        "database_path": str(tmp_path / "t.db"), "frontend_dist": str(tmp_path / "nodist"),
+        "sync_on_startup": False,
+    }
     base.update(kw)
     return Settings(**base)
 

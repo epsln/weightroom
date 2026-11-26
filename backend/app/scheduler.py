@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import logging
 import sqlite3
+from collections.abc import Callable
 from datetime import datetime
-from typing import Callable
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 

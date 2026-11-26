@@ -41,7 +41,7 @@ def _load_or_create_key_file(path: Path) -> bytes:
     return key
 
 
-def load_cipher(settings: Settings) -> "Cipher":
+def load_cipher(settings: Settings) -> Cipher:
     if settings.secret:
         return Cipher(Fernet(_derive(settings.secret)))
     path = settings.secret_key_path

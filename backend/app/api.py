@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import logging
 from contextlib import asynccontextmanager
-from datetime import date, datetime, timedelta, timezone
+from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from typing import Literal
 
@@ -62,7 +62,7 @@ def create_app(settings: Settings | None = None, enable_scheduler: bool = True) 
     conn = connect(settings.database_path)
     init_schema(conn)
     cipher = load_cipher(settings)
-    refresh, api_key, source = profile.credentials(conn, settings, cipher)
+    refresh, api_key, _source = profile.credentials(conn, settings, cipher)
 
     def persist_rotated(new_token: str) -> None:
         # Only DB-stored tokens are persisted; .env is the user's to manage.
@@ -91,7 +91,7 @@ def create_app(settings: Settings | None = None, enable_scheduler: bool = True) 
     app.state.settings = settings
 
     def local_today() -> date:
-        return (datetime.now(timezone.utc) + timedelta(hours=settings.timezone_offset)).date()
+        return (datetime.now(UTC) + timedelta(hours=settings.timezone_offset)).date()
 
     # Endpoints are `async` on purpose: they run on the event loop thread, which
     # serializes access to the single SQLite connection.

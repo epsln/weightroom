@@ -146,10 +146,10 @@ def weekly_volume(conn: sqlite3.Connection, weeks: int = 12, today: date | None 
     by_week: dict[tuple[int, int], dict[str, float]] = {}
     for r in rows:
         by_week.setdefault((r["iso_year"], r["iso_week"]), {})[r["bucket"]] = r["volume_kg"]
-    counts = dict(
-        ((r[0], r[1]), r[2])
+    counts = {
+        (r[0], r[1]): r[2]
         for r in conn.execute("SELECT iso_year, iso_week, COUNT(*) FROM sessions GROUP BY 1, 2")
-    )
+    }
 
     out = []
     for monday in mondays:

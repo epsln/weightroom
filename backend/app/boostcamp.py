@@ -6,7 +6,7 @@ import asyncio
 import json
 import sqlite3
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import httpx
 
@@ -21,7 +21,7 @@ class BoostcampError(RuntimeError):
 
 
 def _now() -> str:
-    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+    return datetime.now(UTC).isoformat(timespec="seconds")
 
 
 async def fetch_history(
@@ -112,7 +112,7 @@ async def run_sync(conn: sqlite3.Connection, tokens: TokenManager, timezone_offs
             ok = 1
         except (BoostcampAuthError, BoostcampError) as exc:
             error = str(exc)
-        except Exception as exc:  # keep the scheduler alive on unexpected failures
+        except Exception as exc:  # noqa: BLE001 - keep the scheduler alive on unexpected failures
             error = f"{type(exc).__name__}: {exc}"
         with conn:
             conn.execute(

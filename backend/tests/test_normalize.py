@@ -77,7 +77,7 @@ def test_skipped_sets_excluded(conn, history):
     session = find_session(history, "2026-11-24")
     deadlift = next(r for r in session["records"] if r["name"] == "Deadlift (Barbell)")
     deadlift["sets"][0]["skipped"] = True
-    session_row, sets = normalize_session(session)
+    _session_row, sets = normalize_session(session)
     dl = [s for s in sets if s["exercise"] == "Deadlift (Barbell)"]
     assert len(dl) == len(deadlift["sets"]) - 1
     assert all(s["set_idx"] != 0 for s in dl)
