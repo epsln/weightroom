@@ -1,0 +1,16 @@
+services:
+  weightroom:
+    build: .
+    image: weightroom:latest
+    container_name: weightroom
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_PATH: /data/weightroom.db
+    ports:
+      - "8000:8000"
+    volumes:
+      - weightroom-data:/data
+
+volumes:
+  weightroom-data:

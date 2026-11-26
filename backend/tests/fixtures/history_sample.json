@@ -1,0 +1,5069 @@
+{
+ "data": {
+  "2026-11-24": [
+   {
+    "program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+    "id": "eRVsBWZDQaa5HjFP",
+    "finished_at": "2026-11-24 13:29:30",
+    "day": 1,
+    "week": 1,
+    "workout": "{}",
+    "records": [
+     {
+      "id": "943cc6f1-bf12-4beb-adb9-175b7f5c627b",
+      "name": "Deadlift (Barbell)",
+      "sets": [
+       {
+        "value": "90",
+        "amount": "3",
+        "custom": false,
+        "source": "coach",
+        "target": 3,
+        "skipped": false,
+        "intensity": 70,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 3,
+        "previous_reps": 5,
+        "target_weight": 200.62,
+        "intensity_unit": "%",
+        "archived_weight": 198.416034,
+        "previous_target": 5,
+        "previous_weight": 187.392921,
+        "support_distance": false,
+        "previous_intensity": 65,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       },
+       {
+        "value": "105",
+        "amount": "3",
+        "custom": false,
+        "source": "coach",
+        "target": 3,
+        "skipped": false,
+        "intensity": 80,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 3,
+        "previous_reps": 5,
+        "target_weight": 229.28,
+        "intensity_unit": "%",
+        "archived_weight": 231.485373,
+        "previous_target": 5,
+        "previous_weight": 214.9507035,
+        "support_distance": false,
+        "previous_intensity": 75,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       },
+       {
+        "value": "117.5",
+        "amount": "3+",
+        "custom": false,
+        "source": "coach",
+        "target": 3,
+        "skipped": false,
+        "intensity": 90,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_max",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 4,
+        "previous_reps": 8,
+        "target_weight": 257.94,
+        "intensity_unit": "%",
+        "archived_weight": 275.577825,
+        "previous_target": 5,
+        "previous_weight": 242.508486,
+        "support_distance": false,
+        "previous_intensity": 85,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps_max",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "e8b9d509-21de-481f-8c07-e89a0cfd7515",
+      "notes": "Perform warm-up sets beforehand. Read Jim Wendler's 5/3/1 BBB guide for more details.",
+      "video": "youtube://v/1nvAUJVmFZY\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Back",
+       "Legs"
+      ],
+      "target_type": "reps",
+      "weight_unit": "kg",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Quadriceps",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Hamstrings",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Lower Back",
+        "percent": "50%"
+       },
+       {
+        "muscle": "Abs",
+        "percent": "50%"
+       }
+      ],
+      "support_distance": false
+     },
+     {
+      "id": "f7d4eed8-dcf9-4a9f-b700-778acc741249",
+      "name": "Deadlift",
+      "sets": [
+       {
+        "value": "65",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 143,
+        "intensity_unit": "exercise",
+        "archived_weight": 165.346695,
+        "previous_target": 10,
+        "previous_weight": 154.323582,
+        "support_distance": false,
+        "previous_intensity": 50,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "exercise",
+        "intensity_dependency_exercise": "Deadlift (Barbell)"
+       },
+       {
+        "value": "75",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 143,
+        "intensity_unit": "exercise",
+        "archived_weight": 165.346695,
+        "previous_target": 10,
+        "previous_weight": 132.277356,
+        "support_distance": false,
+        "previous_intensity": 50,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "exercise",
+        "intensity_dependency_exercise": "Deadlift (Barbell)"
+       },
+       {
+        "value": "75",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 143,
+        "intensity_unit": "exercise",
+        "archived_weight": 165.346695,
+        "previous_target": 10,
+        "previous_weight": 132.277356,
+        "support_distance": false,
+        "previous_intensity": 50,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "exercise",
+        "intensity_dependency_exercise": "Deadlift (Barbell)"
+       },
+       {
+        "value": "75",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "maxValue": {
+         "MaxVolume": 1653.47,
+         "TopWeight": 165.35,
+         "Estimated1RM": 220.46
+        },
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 143,
+        "intensity_unit": "exercise",
+        "archived_weight": 165.346695,
+        "previous_target": 10,
+        "previous_weight": 132.277356,
+        "support_distance": false,
+        "previous_intensity": 50,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "exercise",
+        "intensity_dependency_exercise": "Deadlift (Barbell)"
+       },
+       {
+        "value": "75",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 143,
+        "intensity_unit": "exercise",
+        "archived_weight": 165.346695,
+        "previous_target": 10,
+        "previous_weight": 132.277356,
+        "support_distance": false,
+        "previous_intensity": 50,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "exercise",
+        "intensity_dependency_exercise": "Deadlift (Barbell)"
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "0d07c421-737f-4d46-a8dc-50aedf4a4265",
+      "notes": "Press *** to switch to Squat. If you switch, make sure to switch secondary exercises for other days as well. Read Jim Wendler's BBB guide for details.",
+      "video": "youtube://v/1nvAUJVmFZY\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Back",
+       "Legs"
+      ],
+      "target_type": "reps",
+      "weight_unit": "kg",
+      "alternatives": [
+       {
+        "id": "0519411e-9190-4069-9852-c6116bdbda07",
+        "day": 3,
+        "name": "Squat",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 116,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Squat (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 116,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Squat (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 116,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Squat (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 116,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Squat (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 116,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Squat (Barbell)"
+         }
+        ],
+        "type": "Barbell",
+        "week": 0,
+        "notes": "Press *** to switch to Deadlift. If you switch, make sure to switch secondary exercises for other days as well. Read Jim Wendler's BBB guide for details.",
+        "video": "youtube://v/QmZAiBqPvZw\n",
+        "source": "coach",
+        "muscles": [
+         "Legs"
+        ],
+        "program": {
+         "title": "5/3/1 Boring But Big (Copy)"
+        },
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Quadriceps",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Glutes",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Hamstrings",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Adductors",
+          "percent": "40%"
+         },
+         {
+          "muscle": "Abs",
+          "percent": "20%"
+         }
+        ]
+       },
+       {
+        "id": "f8e5bbfa-39c5-4cd8-a39e-8a9e3903373d",
+        "name": "Front Squat (Barbell)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Barbell",
+        "video": "youtube://v/CE0uSrr4SYQ\n",
+        "source": "master",
+        "muscles": [
+         "Legs"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Quadriceps",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Glutes",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Lower Back",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Hamstrings",
+          "percent": "60%"
+         }
+        ]
+       },
+       {
+        "id": "161a7891-5739-4ef0-8a5a-113cc390f1e7",
+        "name": "Stiff Leg Deadlift",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Barbell",
+        "video": "youtube://v/CN_7cz3P-1U\n",
+        "source": "master",
+        "muscles": [
+         "Back",
+         "Legs"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Hamstrings",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Glutes",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Lower Back",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Abs",
+          "percent": "40%"
+         }
+        ]
+       }
+      ],
+      "muscles_list": [
+       {
+        "muscle": "Quadriceps",
+        "percent": "80%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Hamstrings",
+        "percent": "40%"
+       },
+       {
+        "muscle": "Lower Back",
+        "percent": "40%"
+       },
+       {
+        "muscle": "Abs",
+        "percent": "20%"
+       }
+      ],
+      "support_distance": false
+     },
+     {
+      "id": "f8e5bbfa-39c5-4cd8-a39e-8a9e3903373d",
+      "name": "Front Squat (Barbell)",
+      "sets": [
+       {
+        "value": "45",
+        "amount": "10",
+        "custom": false,
+        "source": "master",
+        "target": 10,
+        "skipped": false,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "archived_weight": 99.208017,
+        "previous_target": 10,
+        "previous_weight": 88.184904,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_target_max": 20,
+        "previous_target_min": 10,
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps_range",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       },
+       {
+        "value": "45",
+        "amount": "10",
+        "custom": false,
+        "source": "master",
+        "target": 10,
+        "skipped": false,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "archived_weight": 99.208017,
+        "previous_target": 10,
+        "previous_weight": 88.184904,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_target_max": 20,
+        "previous_target_min": 10,
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps_range",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       },
+       {
+        "value": "45",
+        "amount": "10",
+        "custom": false,
+        "source": "master",
+        "target": 10,
+        "skipped": false,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "archived_weight": 99.208017,
+        "previous_target": 10,
+        "previous_weight": 88.184904,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_target_max": 20,
+        "previous_target_min": 10,
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps_range",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       },
+       {
+        "value": "45",
+        "amount": "10",
+        "custom": false,
+        "source": "master",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "intensity_unit": "%",
+        "support_distance": false
+       },
+       {
+        "value": "45",
+        "amount": "10",
+        "custom": false,
+        "source": "master",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "intensity_unit": "%",
+        "support_distance": false
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "28cd783b-142c-4eb8-87d4-edee0705550e",
+      "notes": "",
+      "video": "https://s3.boostcamp.app/master-exercise/371439817.mp4",
+      "custom": false,
+      "source": "master",
+      "muscles": [
+       "Legs"
+      ],
+      "keepNote": false,
+      "thumbnail": "https://s3.amazonaws.com/s3.boostcamp.app/master_exercise/197f8e5bbfa-39c5-4cd8-a39e-8a9e3903373d.jpg",
+      "created_at": "2022-02-08T07:04:16.586Z",
+      "equipments": [
+       "Barbell"
+      ],
+      "updated_at": "2026-09-29T04:26:15.272Z",
+      "target_type": "reps_range",
+      "weight_unit": "kg",
+      "alternatives": [
+       {
+        "id": "830cab9a-434e-43a4-8e2e-738d070fcbaa",
+        "name": "Abs Crunch (Weighted)",
+        "sets": [
+         {
+          "value": "",
+          "amount": "",
+          "source": "coach",
+          "target": 10,
+          "skipped": true,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "value": "",
+          "amount": "",
+          "source": "coach",
+          "target": 10,
+          "skipped": true,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "value": "",
+          "amount": "",
+          "source": "coach",
+          "target": 10,
+          "skipped": true,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "value": "",
+          "amount": "",
+          "source": "coach",
+          "target": 10,
+          "skipped": true,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "value": "",
+          "amount": "",
+          "source": "coach",
+          "target": 10,
+          "skipped": true,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Dumbbell",
+        "notes": "Press *** to switch to alternate accessories",
+        "video": "youtube://v/QkCt6s3TGMA\n",
+        "source": "coach",
+        "muscles": [
+         "Core"
+        ],
+        "original": true,
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Abs",
+          "percent": "100%"
+         }
+        ],
+        "support_distance": false,
+        "isCoachAlternative": true
+       },
+       {
+        "id": "15406838-4fe8-4dff-9b86-dc898be5411f",
+        "name": "Hanging Leg Raise",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Bodyweight",
+        "video": "youtube://v/zO9vi9bWMoU\n",
+        "source": "master",
+        "muscles": [
+         "Core"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Abs",
+          "percent": "100%"
+         }
+        ],
+        "isCoachAlternative": true
+       },
+       {
+        "id": "e3b192ed-1bd2-4185-ad5b-08da317f8503",
+        "name": "Cable Crunch",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Cable",
+        "video": "youtube://v/3qjoXDTuyOE",
+        "source": "master",
+        "muscles": [
+         "Core"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Abs",
+          "percent": "100%"
+         }
+        ],
+        "isCoachAlternative": true
+       }
+      ],
+      "muscles_list": [
+       {
+        "muscle": "Quadriceps",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Hamstrings",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Lower Back",
+        "percent": "50%"
+       }
+      ],
+      "support_distance": false,
+      "isCoachAlternative": false
+     },
+     {
+      "id": "050fcb94-3664-448a-880b-f547bc543d64",
+      "name": "Leg Press",
+      "sets": [
+       {
+        "value": "180",
+        "amount": "8",
+        "custom": true,
+        "source": "master",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "archived_weight": 264.554712,
+        "previous_weight": 220.46226,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps",
+        "previous_program_week": 0
+       },
+       {
+        "value": "120",
+        "amount": "10",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "archived_weight": 264.554712,
+        "previous_weight": 220.46226,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps",
+        "previous_program_week": 0
+       },
+       {
+        "value": "120",
+        "amount": "10",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "archived_weight": 264.554712,
+        "previous_weight": 220.46226,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795003715783,
+        "previous_target_type": "reps",
+        "previous_program_week": 0
+       }
+      ],
+      "type": "Machine",
+      "uniq": "87e281e9-7e58-4a85-8698-943008c5d3440",
+      "video": "https://s3.boostcamp.app/master-exercise/3738067521.mp4",
+      "custom": true,
+      "source": "master",
+      "muscles": [
+       "Legs"
+      ],
+      "thumbnail": "https://s3.amazonaws.com/s3.boostcamp.app/master_exercise/6050fcb94-3664-448a-880b-f547bc543d64.jpg",
+      "created_at": "2022-02-08T07:04:32.558Z",
+      "equipments": [
+       "Machine"
+      ],
+      "program_id": "f56fbceb-1edc-4593-aa08-0189b5759630",
+      "updated_at": "2022-02-08T07:04:32.558Z",
+      "finished_at": "2025-12-26T15:46:18.845Z",
+      "target_type": "reps",
+      "weight_unit": "kg",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Quadriceps",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Hamstrings",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Abductors",
+        "percent": "50%"
+       }
+      ],
+      "program_week": 1,
+      "isAddForFuture": true,
+      "support_distance": false
+     }
+    ],
+    "legacy": {},
+    "title": "Week 2 \u00b7 Day 2",
+    "type": 2,
+    "name": "5/3/1 Boring But Big"
+   }
+  ],
+  "2026-11-23": [
+   {
+    "program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+    "id": "ustQzsy5Wnhc6XnV",
+    "finished_at": "2026-11-23 19:05:05",
+    "day": 2,
+    "week": 0,
+    "workout": "{}",
+    "records": [
+     {
+      "id": "310d0174-fc8e-4e7f-aacc-35adce7e3a77",
+      "name": "Bench Press (Barbell)",
+      "sets": [
+       {
+        "value": "40",
+        "amount": "5",
+        "custom": false,
+        "source": "coach",
+        "target": 5,
+        "skipped": false,
+        "intensity": 65,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 5,
+        "previous_reps": 5,
+        "target_weight": 89.56,
+        "intensity_unit": "%",
+        "archived_weight": 88.184904,
+        "previous_target": 5,
+        "previous_weight": 88.184904,
+        "support_distance": false,
+        "previous_intensity": 65,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       },
+       {
+        "value": "47.5",
+        "amount": "5",
+        "custom": false,
+        "source": "coach",
+        "target": 5,
+        "skipped": false,
+        "intensity": 75,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 5,
+        "previous_reps": 5,
+        "target_weight": 103.34,
+        "intensity_unit": "%",
+        "archived_weight": 104.7195735,
+        "previous_target": 5,
+        "previous_weight": 104.7195735,
+        "support_distance": false,
+        "previous_intensity": 75,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       },
+       {
+        "value": "52.5",
+        "amount": "5+",
+        "custom": false,
+        "source": "coach",
+        "target": 5,
+        "skipped": false,
+        "intensity": 85,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_max",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 9,
+        "previous_reps": 8,
+        "target_weight": 117.12,
+        "intensity_unit": "%",
+        "archived_weight": 115.7426865,
+        "previous_target": 5,
+        "previous_weight": 115.7426865,
+        "support_distance": false,
+        "previous_intensity": 85,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps_max",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "9ab1aa24-0bdf-4b31-a8da-075775403107",
+      "notes": "Perform warm-up sets beforehand. Read Jim Wendler's 5/3/1 BBB guide for more details.",
+      "video": "youtube://v/wzq57DB5Ppg\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Chest"
+      ],
+      "target_type": "reps",
+      "weight_unit": "kg",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Chest",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Triceps",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Front Delts",
+        "percent": "100%"
+       }
+      ],
+      "support_distance": false
+     },
+     {
+      "id": "310d0174-fc8e-4e7f-aacc-35adce7e3a77",
+      "name": "Bench Press",
+      "sets": [
+       {
+        "value": "32.5",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 69,
+        "intensity_unit": "exercise",
+        "archived_weight": 82.6733475,
+        "previous_target": 10,
+        "previous_weight": 82.6733475,
+        "support_distance": false,
+        "previous_intensity": 50,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "exercise",
+        "intensity_dependency_exercise": "Bench Press (Barbell)"
+       },
+       {
+        "value": "37.5",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 69,
+        "intensity_unit": "exercise",
+        "archived_weight": 82.6733475,
+        "previous_target": 10,
+        "previous_weight": 82.6733475,
+        "support_distance": false,
+        "previous_intensity": 50,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "exercise",
+        "intensity_dependency_exercise": "Bench Press (Barbell)"
+       },
+       {
+        "value": "37.5",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 69,
+        "intensity_unit": "exercise",
+        "archived_weight": 82.6733475,
+        "previous_target": 10,
+        "previous_weight": 82.6733475,
+        "support_distance": false,
+        "previous_intensity": 50,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "exercise",
+        "intensity_dependency_exercise": "Bench Press (Barbell)"
+       },
+       {
+        "value": "37.5",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 69,
+        "intensity_unit": "exercise",
+        "archived_weight": 82.6733475,
+        "previous_target": 10,
+        "previous_weight": 82.6733475,
+        "support_distance": false,
+        "previous_intensity": 50,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "exercise",
+        "intensity_dependency_exercise": "Bench Press (Barbell)"
+       },
+       {
+        "value": "37.5",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 69,
+        "intensity_unit": "exercise",
+        "archived_weight": 82.6733475,
+        "previous_target": 10,
+        "previous_weight": 82.6733475,
+        "support_distance": false,
+        "previous_intensity": 50,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "exercise",
+        "intensity_dependency_exercise": "Bench Press (Barbell)"
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "0db806cf-c62c-4ba7-9436-2ff399621304",
+      "notes": "Press *** to switch to Overhead Press. If you switch, make sure to switch secondary exercises for other days as well. Read Jim Wendler's BBB guide for details.",
+      "video": "youtube://v/wzq57DB5Ppg\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Chest"
+      ],
+      "target_type": "reps",
+      "weight_unit": "kg",
+      "alternatives": [
+       {
+        "id": "2dcddcca-c63c-4f0a-be2a-105c6db01dc7",
+        "day": 0,
+        "name": "Overhead Press",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 58,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Overhead Press (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 58,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Overhead Press (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 58,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Overhead Press (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 58,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Overhead Press (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 58,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Overhead Press (Barbell)"
+         }
+        ],
+        "type": "Barbell",
+        "week": 0,
+        "notes": "Press *** to switch to Bench Press. If you switch, make sure to switch secondary exercises for other days as well. Read Jim Wendler's BBB guide for details.",
+        "video": "youtube://v/VF-YjKlhph0\n",
+        "source": "coach",
+        "muscles": [
+         "Shoulders"
+        ],
+        "program": {
+         "title": "5/3/1 Boring But Big (Copy)"
+        },
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Middle Delts",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Front Delts",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Triceps",
+          "percent": "60%"
+         }
+        ]
+       },
+       {
+        "id": "078d9dac-16d5-4182-a3f2-40cff35c5336",
+        "name": "Bench Press (Dumbbell)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Dumbbell",
+        "video": "youtube://v/hm_TrCkhJgo\n",
+        "source": "master",
+        "muscles": [
+         "Chest"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Chest",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Triceps",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Front Delts",
+          "percent": "40%"
+         }
+        ]
+       },
+       {
+        "id": "27d481be-6594-447b-8c03-edad2c360948",
+        "name": "Seated Shoulder Press (Dumbbell)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Dumbbell",
+        "video": "youtube://v/HzIiNhHhhtA\n",
+        "source": "master",
+        "muscles": [
+         "Shoulders"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Middle Delts",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Front Delts",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Triceps",
+          "percent": "60%"
+         }
+        ]
+       }
+      ],
+      "muscles_list": [
+       {
+        "muscle": "Chest",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Triceps",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Front Delts",
+        "percent": "40%"
+       }
+      ],
+      "support_distance": false
+     },
+     {
+      "id": "11cc74dd-474e-4c27-88b4-36cbcfde5b20",
+      "name": "Lat Pulldown",
+      "sets": [
+       {
+        "value": "55",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "archived_weight": 121.254243,
+        "previous_target": 10,
+        "previous_weight": 121.254243,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       },
+       {
+        "value": "55",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "archived_weight": 132.277356,
+        "previous_target": 10,
+        "previous_weight": 134.4819786,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       },
+       {
+        "value": "60",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 6,
+        "intensity_unit": "%",
+        "archived_weight": 132.277356,
+        "previous_target": 10,
+        "previous_weight": 134.4819786,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0,
+        "previous_intensity_unit": "%"
+       },
+       {
+        "value": "60",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "intensity_unit": "%",
+        "support_distance": false
+       },
+       {
+        "value": "60",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "intensity_unit": "%",
+        "support_distance": false
+       }
+      ],
+      "type": "Machine",
+      "uniq": "324f9e46-0620-4b01-892b-73ee3112b32b",
+      "notes": "Press *** to switch to alternate accessories",
+      "video": "youtube://v/zMAMA9_Ehn8\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Back"
+      ],
+      "target_type": "reps",
+      "weight_unit": "kg",
+      "alternatives": [
+       {
+        "id": "86781073-0d16-4800-ac81-446fc645803d",
+        "name": "Bent Over Row (Dumbbell)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Dumbbell",
+        "video": "youtube://v/VP_f9V854og",
+        "source": "master",
+        "muscles": [
+         "Back"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Upper Back",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Lats",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Biceps",
+          "percent": "40%"
+         }
+        ]
+       },
+       {
+        "id": "3f0ae004-c292-429b-a367-4987dbef7942",
+        "name": "Pull-Up (Weighted)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Dumbbell",
+        "video": "youtube://v/HuuyDNGrCI8",
+        "source": "master",
+        "muscles": [
+         "Back"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Lats",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Upper Back",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Biceps",
+          "percent": "40%"
+         }
+        ]
+       },
+       {
+        "id": "857557cc-8ed1-4b23-94d9-6e1535163131",
+        "name": "Seated Row (Machine)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Machine",
+        "video": "youtube://v/TeFo51Q_Nsc",
+        "source": "master",
+        "muscles": [
+         "Back"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Upper Back",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Lats",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Biceps",
+          "percent": "40%"
+         }
+        ]
+       }
+      ],
+      "muscles_list": [
+       {
+        "muscle": "Lats",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Upper Back",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Biceps",
+        "percent": "50%"
+       }
+      ],
+      "support_distance": false
+     },
+     {
+      "id": "e9f51f34-386c-49af-aedb-f42ef174c42f",
+      "name": "Tricep Extension (Cable)",
+      "sets": [
+       {
+        "value": "17.5",
+        "amount": "12",
+        "custom": true,
+        "source": "coach",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 12,
+        "previous_reps": 12,
+        "archived_weight": 44.092452,
+        "previous_weight": 38.5808955,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1794657577122,
+        "previous_target_type": "reps_range",
+        "previous_program_week": 3
+       },
+       {
+        "value": "20",
+        "amount": "12",
+        "custom": true,
+        "source": "coach",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 12,
+        "previous_reps": 12,
+        "archived_weight": 44.092452,
+        "previous_weight": 38.5808955,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1794657577122,
+        "previous_target_type": "reps_range",
+        "previous_program_week": 3
+       },
+       {
+        "value": "20",
+        "amount": "12",
+        "custom": true,
+        "source": "coach",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 12,
+        "previous_reps": 12,
+        "archived_weight": 44.092452,
+        "previous_weight": 38.5808955,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1794657577122,
+        "previous_target_type": "reps_range",
+        "previous_program_week": 3
+       }
+      ],
+      "type": "Cable",
+      "uniq": "37dfe2c3-c9d2-45bd-8817-9b4f46ae6a1a",
+      "video": "youtube://v/mpZ9VRisAyw",
+      "custom": true,
+      "source": "coach",
+      "muscles": [
+       "Arms"
+      ],
+      "program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+      "finished_at": "2026-11-14T11:59:37.122Z",
+      "target_type": "reps_range",
+      "weight_unit": "kg",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Triceps",
+        "percent": "100%"
+       }
+      ],
+      "program_week": 3,
+      "isAddForFuture": true,
+      "support_distance": false
+     },
+     {
+      "id": "3c36154c-9c64-47bb-8cc8-1925a8e39afa",
+      "name": "Bicep Curl (EZ Bar)",
+      "sets": [
+       {
+        "value": "27.5",
+        "amount": "10",
+        "custom": true,
+        "source": "master",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "archived_weight": 60.6271215,
+        "previous_weight": 60.6271215,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0
+       },
+       {
+        "value": "27.5",
+        "amount": "7",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 7,
+        "archived_weight": 60.6271215,
+        "previous_weight": 60.6271215,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0
+       },
+       {
+        "value": "27.5",
+        "amount": "2",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 5,
+        "previous_reps": 2,
+        "archived_weight": 60.6271215,
+        "previous_weight": 60.6271215,
+        "support_distance": false,
+        "previous_program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+        "previous_finished_at": 1795087978779,
+        "previous_target_type": "reps",
+        "previous_program_week": 0
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "05b627bb-6787-42d0-b28d-e984345850b2",
+      "video": "https://s3.boostcamp.app/master-exercise/2202039199.mp4",
+      "custom": true,
+      "source": "master",
+      "muscles": [
+       "Arms"
+      ],
+      "thumbnail": "https://s3.amazonaws.com/s3.boostcamp.app/master_exercise/93c36154c-9c64-47bb-8cc8-1925a8e39afa.jpg",
+      "created_at": "2022-02-08T07:04:15.052Z",
+      "equipments": [
+       "Barbell"
+      ],
+      "program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+      "updated_at": "2026-09-29T04:26:15.272Z",
+      "finished_at": "2026-11-19T11:32:58.779Z",
+      "target_type": "reps",
+      "weight_unit": "kg",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Biceps",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Forearms",
+        "percent": "50%"
+       }
+      ],
+      "program_week": 0,
+      "isAddForFuture": true,
+      "support_distance": false
+     }
+    ],
+    "legacy": {},
+    "title": "Week 1 \u00b7 Day 3",
+    "type": 2,
+    "name": "5/3/1 Boring But Big"
+   }
+  ],
+  "2025-11-21": [
+   {
+    "program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+    "id": "qUmR8zCjGFQeWojy",
+    "finished_at": "2025-11-21 15:55:17",
+    "day": 1,
+    "week": 1,
+    "workout": "{}",
+    "records": [
+     {
+      "id": "943cc6f1-bf12-4beb-adb9-175b7f5c627b",
+      "name": "Deadlift (Barbell)",
+      "sets": [
+       {
+        "value": "95",
+        "amount": "3",
+        "custom": false,
+        "source": "coach",
+        "target": 3,
+        "skipped": false,
+        "intensity": 70,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 3,
+        "previous_reps": 5,
+        "target_weight": 208.34,
+        "intensity_unit": "%",
+        "archived_weight": 209.439147,
+        "previous_weight": 192.9044775
+       },
+       {
+        "value": "107.5",
+        "amount": "3",
+        "custom": false,
+        "source": "coach",
+        "target": 3,
+        "skipped": false,
+        "intensity": 80,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 3,
+        "previous_reps": 5,
+        "target_weight": 238.1,
+        "intensity_unit": "%",
+        "archived_weight": 236.9969295,
+        "previous_weight": 225.9738165
+       },
+       {
+        "value": "122.5",
+        "amount": "3+",
+        "custom": false,
+        "source": "coach",
+        "target": 3,
+        "skipped": false,
+        "maxValue": {
+         "Estimated1RM": 313.6253440645161
+        },
+        "intensity": 90,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_max",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 6,
+        "previous_reps": 7,
+        "target_weight": 267.86,
+        "intensity_unit": "%",
+        "archived_weight": 270.0662685,
+        "previous_weight": 253.531599
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "4b2b85be-5662-468f-9975-08bb0a129b6f",
+      "notes": "Perform warm-up sets beforehand. Read Jim Wendler's 5/3/1 BBB guide for more details.",
+      "video": "youtube://v/1nvAUJVmFZY\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Back",
+       "Legs"
+      ],
+      "target_type": "reps",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Quadriceps",
+        "percent": "80%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Hamstrings",
+        "percent": "40%"
+       },
+       {
+        "muscle": "Lower Back",
+        "percent": "40%"
+       },
+       {
+        "muscle": "Abs",
+        "percent": "20%"
+       }
+      ]
+     },
+     {
+      "id": "f7d4eed8-dcf9-4a9f-b700-778acc741249",
+      "name": "Deadlift",
+      "sets": [
+       {
+        "value": "67.5",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "showPrevious": true,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 149,
+        "intensity_unit": "exercise",
+        "archived_weight": 154.323582,
+        "previous_weight": 154.323582,
+        "intensity_dependency_exercise": "Deadlift (Barbell)"
+       },
+       {
+        "value": "70",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "showPrevious": true,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 149,
+        "intensity_unit": "exercise",
+        "archived_weight": 154.323582,
+        "previous_weight": 154.323582,
+        "intensity_dependency_exercise": "Deadlift (Barbell)"
+       },
+       {
+        "value": "70",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "showPrevious": true,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 149,
+        "intensity_unit": "exercise",
+        "archived_weight": 154.323582,
+        "previous_weight": 154.323582,
+        "intensity_dependency_exercise": "Deadlift (Barbell)"
+       },
+       {
+        "value": "70",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "showPrevious": true,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 149,
+        "intensity_unit": "exercise",
+        "archived_weight": 154.323582,
+        "previous_weight": 154.323582,
+        "intensity_dependency_exercise": "Deadlift (Barbell)"
+       },
+       {
+        "value": "70",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "showPrevious": true,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 149,
+        "intensity_unit": "exercise",
+        "archived_weight": 154.323582,
+        "previous_weight": 154.323582,
+        "intensity_dependency_exercise": "Deadlift (Barbell)"
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "394ef928-14a3-42b5-a4f9-fb28a4680bd8",
+      "notes": "Press *** to switch to Squat. If you switch, make sure to switch secondary exercises for other days as well. Read Jim Wendler's BBB guide for details.",
+      "video": "youtube://v/1nvAUJVmFZY\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Back",
+       "Legs"
+      ],
+      "target_type": "reps",
+      "alternatives": [
+       {
+        "id": "0519411e-9190-4069-9852-c6116bdbda07",
+        "day": 3,
+        "name": "Squat",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 121,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Squat (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 121,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Squat (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 121,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Squat (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 121,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Squat (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 121,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Squat (Barbell)"
+         }
+        ],
+        "type": "Barbell",
+        "week": 0,
+        "notes": "Press *** to switch to Deadlift. If you switch, make sure to switch secondary exercises for other days as well. Read Jim Wendler's BBB guide for details.",
+        "video": "youtube://v/QmZAiBqPvZw\n",
+        "source": "coach",
+        "muscles": [
+         "Legs"
+        ],
+        "program": {
+         "title": "5/3/1 Boring But Big (Copy)"
+        },
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Quadriceps",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Glutes",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Hamstrings",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Adductors",
+          "percent": "40%"
+         },
+         {
+          "muscle": "Abs",
+          "percent": "20%"
+         }
+        ]
+       },
+       {
+        "id": "f8e5bbfa-39c5-4cd8-a39e-8a9e3903373d",
+        "name": "Front Squat (Barbell)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Barbell",
+        "video": "youtube://v/CE0uSrr4SYQ\n",
+        "source": "master",
+        "muscles": [
+         "Legs"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Quadriceps",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Glutes",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Lower Back",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Hamstrings",
+          "percent": "60%"
+         }
+        ]
+       },
+       {
+        "id": "161a7891-5739-4ef0-8a5a-113cc390f1e7",
+        "name": "Stiff Leg Deadlift",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Barbell",
+        "video": "youtube://v/CN_7cz3P-1U\n",
+        "source": "master",
+        "muscles": [
+         "Back",
+         "Legs"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Hamstrings",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Glutes",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Lower Back",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Abs",
+          "percent": "40%"
+         }
+        ]
+       }
+      ],
+      "muscles_list": [
+       {
+        "muscle": "Quadriceps",
+        "percent": "80%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Hamstrings",
+        "percent": "40%"
+       },
+       {
+        "muscle": "Lower Back",
+        "percent": "40%"
+       },
+       {
+        "muscle": "Abs",
+        "percent": "20%"
+       }
+      ],
+      "showPrevious": true
+     },
+     {
+      "id": "830cab9a-434e-43a4-8e2e-738d070fcbaa",
+      "name": "Abs Crunch (Weighted)",
+      "sets": [
+       {
+        "value": "",
+        "amount": "",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "previous_weight": 11.023113
+       },
+       {
+        "value": "",
+        "amount": "",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "previous_weight": 11.023113
+       },
+       {
+        "value": "",
+        "amount": "",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "previous_weight": 11.023113
+       },
+       {
+        "value": "",
+        "amount": "",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "intensity_unit": "%"
+       },
+       {
+        "value": "",
+        "amount": "",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "intensity_unit": "%"
+       }
+      ],
+      "type": "Dumbbell",
+      "uniq": "a7ab2df4-d14e-44e4-98f1-57d954b323e6",
+      "notes": "Press *** to switch to alternate accessories",
+      "video": "youtube://v/QkCt6s3TGMA\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Core"
+      ],
+      "target_type": "reps_range",
+      "alternatives": [
+       {
+        "id": "15406838-4fe8-4dff-9b86-dc898be5411f",
+        "name": "Hanging Leg Raise",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Bodyweight",
+        "video": "youtube://v/zO9vi9bWMoU\n",
+        "source": "master",
+        "muscles": [
+         "Core"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Abs",
+          "percent": "100%"
+         }
+        ]
+       },
+       {
+        "id": "e3b192ed-1bd2-4185-ad5b-08da317f8503",
+        "name": "Cable Crunch",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Cable",
+        "video": "youtube://v/3qjoXDTuyOE",
+        "source": "master",
+        "muscles": [
+         "Core"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Abs",
+          "percent": "100%"
+         }
+        ]
+       }
+      ],
+      "muscles_list": [
+       {
+        "muscle": "Abs",
+        "percent": "100%"
+       }
+      ]
+     },
+     {
+      "id": "737aaba7-2c72-4514-9472-bc7043c7d968",
+      "name": "Romanian Deadlift (Barbell)",
+      "sets": [
+       {
+        "value": "75",
+        "amount": "8",
+        "custom": true,
+        "source": "master",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 8,
+        "previous_reps": 8,
+        "archived_weight": 176.369808,
+        "previous_weight": 165.346695
+       },
+       {
+        "value": "80",
+        "amount": "8",
+        "custom": true,
+        "source": "master",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 8,
+        "previous_reps": 8,
+        "archived_weight": 176.369808,
+        "previous_weight": 165.346695
+       },
+       {
+        "value": "80",
+        "amount": "8",
+        "custom": true,
+        "source": "master",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 8,
+        "previous_reps": 8,
+        "archived_weight": 176.369808,
+        "previous_weight": 165.346695
+       },
+       {
+        "value": "80",
+        "amount": "8",
+        "custom": true,
+        "source": "master",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 8,
+        "previous_reps": 8,
+        "archived_weight": 176.369808,
+        "previous_weight": 165.346695
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "754da179-e091-46b2-b555-225bcfc0513e",
+      "video": "https://s3.boostcamp.app/master-exercise/1778268569.mp4",
+      "custom": true,
+      "source": "master",
+      "muscles": [
+       "Back",
+       "Legs"
+      ],
+      "keepNote": true,
+      "thumbnail": "https://s3.amazonaws.com/s3.boostcamp.app/master_exercise/57737aaba7-2c72-4514-9472-bc7043c7d968.jpg",
+      "created_at": "2022-02-08T07:04:41.262Z",
+      "equipments": [
+       "Barbell"
+      ],
+      "updated_at": "2025-07-10T09:10:52.014Z",
+      "finished_at": "2025-11-12T16:04:17.388Z",
+      "target_type": "reps_range",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Hamstrings",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Lower Back",
+        "percent": "80%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Abs",
+        "percent": "40%"
+       },
+       {
+        "muscle": "Quadriceps",
+        "percent": "20%"
+       }
+      ],
+      "isAddForFuture": false
+     },
+     {
+      "id": "050fcb94-3664-448a-880b-f547bc543d64",
+      "name": "Leg Press",
+      "sets": [
+       {
+        "value": "160",
+        "amount": "8",
+        "custom": true,
+        "source": "master",
+        "skipped": false,
+        "maxValue": {
+         "TopWeight": 374.785842,
+         "Estimated1RM": 465.2513900689655
+        },
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 8,
+        "previous_reps": 8,
+        "archived_weight": 374.785842,
+        "previous_weight": 352.739616
+       },
+       {
+        "value": "170",
+        "amount": "8",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 8,
+        "previous_reps": 8,
+        "archived_weight": 374.785842,
+        "previous_weight": 352.739616
+       },
+       {
+        "value": "170",
+        "amount": "8",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 8,
+        "previous_reps": 8,
+        "archived_weight": 374.785842,
+        "previous_weight": 352.739616
+       },
+       {
+        "value": "170",
+        "amount": "8",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "isCopyLast": true,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 8,
+        "archived_weight": 374.785842
+       }
+      ],
+      "type": "Machine",
+      "uniq": "91511674-dd94-4a94-8440-b679358c2307",
+      "video": "https://s3.boostcamp.app/master-exercise/3738067521.mp4",
+      "custom": true,
+      "source": "master",
+      "muscles": [
+       "Legs"
+      ],
+      "thumbnail": "https://s3.amazonaws.com/s3.boostcamp.app/master_exercise/6050fcb94-3664-448a-880b-f547bc543d64.jpg",
+      "created_at": "2022-02-08T07:04:32.558Z",
+      "equipments": [
+       "Machine"
+      ],
+      "updated_at": "2022-02-08T07:04:32.558Z",
+      "finished_at": "2025-11-17T14:49:15.753Z",
+      "target_type": "reps",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Quadriceps",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Hamstrings",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "40%"
+       },
+       {
+        "muscle": "Abductors",
+        "percent": "20%"
+       }
+      ],
+      "isAddForFuture": false
+     },
+     {
+      "id": "e589c33b-905e-420e-99be-e2289617c4e0",
+      "name": "Back Extension",
+      "sets": [
+       {
+        "value": "20",
+        "amount": "15",
+        "custom": true,
+        "source": "master",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 15,
+        "previous_reps": 15,
+        "archived_weight": 44.092452,
+        "previous_weight": 44.092452
+       },
+       {
+        "value": "20",
+        "amount": "15",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 15,
+        "previous_reps": 15,
+        "archived_weight": 44.092452,
+        "previous_weight": 44.092452
+       },
+       {
+        "value": "20",
+        "amount": "15",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 15,
+        "previous_reps": 15,
+        "archived_weight": 44.092452,
+        "previous_weight": 44.092452
+       }
+      ],
+      "type": "Machine",
+      "uniq": "cd9d689f-8a0f-4c9e-8ff9-589cc3e730ec",
+      "video": "https://s3.boostcamp.app/master-exercise/1549403945.mp4",
+      "custom": true,
+      "source": "master",
+      "muscles": [
+       "Back"
+      ],
+      "thumbnail": "https://s3.amazonaws.com/s3.boostcamp.app/master_exercise/187e589c33b-905e-420e-99be-e2289617c4e0.jpg",
+      "created_at": "2022-02-08T07:03:59.589Z",
+      "equipments": [
+       "Machine"
+      ],
+      "updated_at": "2022-02-08T07:03:59.589Z",
+      "finished_at": "2025-11-17T14:49:15.753Z",
+      "target_type": "reps",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Lower Back",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "80%"
+       }
+      ],
+      "isAddForFuture": false
+     }
+    ],
+    "legacy": {},
+    "title": "Week 2 \u00b7 Day 2",
+    "type": 2,
+    "name": "5/3/1 Boring But Big"
+   }
+  ],
+  "2025-11-20": [
+   {
+    "program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+    "id": "QShMSgYjBYgDdFJ5",
+    "finished_at": "2025-11-20 16:04:56",
+    "day": 0,
+    "week": 1,
+    "workout": "{}",
+    "records": [
+     {
+      "id": "e2343b5d-ecbd-488b-a901-d65a9e209cb3",
+      "name": "Overhead Press (Barbell)",
+      "sets": [
+       {
+        "value": "37.5",
+        "amount": "3",
+        "custom": false,
+        "source": "coach",
+        "target": 3,
+        "skipped": false,
+        "intensity": 70,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 3,
+        "previous_reps": 5,
+        "target_weight": 81.02,
+        "intensity_unit": "%",
+        "archived_weight": 82.6733475,
+        "previous_weight": 77.161791
+       },
+       {
+        "value": "42.5",
+        "amount": "3",
+        "custom": false,
+        "source": "coach",
+        "target": 3,
+        "skipped": false,
+        "intensity": 80,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 3,
+        "previous_reps": 5,
+        "target_weight": 92.59,
+        "intensity_unit": "%",
+        "archived_weight": 93.6964605,
+        "previous_weight": 88.184904
+       },
+       {
+        "value": "47.5",
+        "amount": "3+",
+        "custom": false,
+        "source": "coach",
+        "target": 3,
+        "skipped": false,
+        "maxValue": {
+         "Estimated1RM": 114.2395347272727
+        },
+        "intensity": 90,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_max",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 4,
+        "previous_reps": 5,
+        "target_weight": 104.17,
+        "intensity_unit": "%",
+        "archived_weight": 104.7195735,
+        "previous_weight": 99.208017
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "f03225e3-e5db-4551-8a6e-e26b8852c4d5",
+      "notes": "Perform warm-up sets beforehand. Read Jim Wendler's 5/3/1 BBB guide for more details.",
+      "video": "youtube://v/VF-YjKlhph0\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Shoulders"
+      ],
+      "target_type": "reps",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Middle Delts",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Front Delts",
+        "percent": "80%"
+       },
+       {
+        "muscle": "Triceps",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Abs",
+        "percent": "20%"
+       }
+      ]
+     },
+     {
+      "id": "d61d4d98-d546-458f-a2cc-27294cdb9268",
+      "name": "Overhead Press",
+      "sets": [
+       {
+        "value": "27.5",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 58,
+        "intensity_unit": "exercise",
+        "archived_weight": 60.6271215,
+        "previous_weight": 60.6271215,
+        "intensity_dependency_exercise": "Overhead Press (Barbell)"
+       },
+       {
+        "value": "27.5",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 58,
+        "intensity_unit": "exercise",
+        "archived_weight": 60.6271215,
+        "previous_weight": 60.6271215,
+        "intensity_dependency_exercise": "Overhead Press (Barbell)"
+       },
+       {
+        "value": "27.5",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 58,
+        "intensity_unit": "exercise",
+        "archived_weight": 60.6271215,
+        "previous_weight": 60.6271215,
+        "intensity_dependency_exercise": "Overhead Press (Barbell)"
+       },
+       {
+        "value": "27.5",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 58,
+        "intensity_unit": "exercise",
+        "archived_weight": 60.6271215,
+        "previous_weight": 60.6271215,
+        "intensity_dependency_exercise": "Overhead Press (Barbell)"
+       },
+       {
+        "value": "27.5",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 58,
+        "intensity_unit": "exercise",
+        "archived_weight": 60.6271215,
+        "previous_weight": 60.6271215,
+        "intensity_dependency_exercise": "Overhead Press (Barbell)"
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "af61c0b7-f1d3-4170-964b-369b73cc3319",
+      "notes": "Press *** to switch to Bench Press. If you switch, make sure to switch secondary exercises for other days as well. Read Jim Wendler's BBB guide for details.",
+      "video": "youtube://v/VF-YjKlhph0\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Shoulders"
+      ],
+      "target_type": "reps",
+      "alternatives": [
+       {
+        "id": "8ab70a9a-3173-4cad-9de9-bea4673086cc",
+        "day": 2,
+        "name": "Bench Press",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 80,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Bench Press (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 80,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Bench Press (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 80,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Bench Press (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 80,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Bench Press (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 80,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Bench Press (Barbell)"
+         }
+        ],
+        "type": "Barbell",
+        "week": 0,
+        "notes": "Press *** to switch to Overhead Press. If you switch, make sure to switch secondary exercises for other days as well. Read Jim Wendler's BBB guide for details.",
+        "video": "youtube://v/wzq57DB5Ppg\n",
+        "source": "coach",
+        "muscles": [
+         "Chest"
+        ],
+        "program": {
+         "title": "5/3/1 Boring But Big (Copy)"
+        },
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Chest",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Triceps",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Front Delts",
+          "percent": "40%"
+         }
+        ]
+       },
+       {
+        "id": "27d481be-6594-447b-8c03-edad2c360948",
+        "name": "Seated Shoulder Press (Dumbbell)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Dumbbell",
+        "video": "youtube://v/HzIiNhHhhtA\n",
+        "source": "master",
+        "muscles": [
+         "Shoulders"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Middle Delts",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Front Delts",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Triceps",
+          "percent": "60%"
+         }
+        ]
+       },
+       {
+        "id": "078d9dac-16d5-4182-a3f2-40cff35c5336",
+        "name": "Bench Press (Dumbbell)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Dumbbell",
+        "video": "youtube://v/hm_TrCkhJgo\n",
+        "source": "master",
+        "muscles": [
+         "Chest"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Chest",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Triceps",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Front Delts",
+          "percent": "40%"
+         }
+        ]
+       }
+      ],
+      "muscles_list": [
+       {
+        "muscle": "Middle Delts",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Front Delts",
+        "percent": "80%"
+       },
+       {
+        "muscle": "Triceps",
+        "percent": "60%"
+       }
+      ]
+     },
+     {
+      "id": "11cc74dd-474e-4c27-88b4-36cbcfde5b20",
+      "name": "Lat Pulldown",
+      "sets": [
+       {
+        "value": "60",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "archived_weight": 132.277356,
+        "previous_weight": 132.277356
+       },
+       {
+        "value": "60",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "archived_weight": 132.277356,
+        "previous_weight": 132.277356
+       },
+       {
+        "value": "60",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "archived_weight": 132.277356,
+        "previous_weight": 132.277356
+       },
+       {
+        "value": "60",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 9,
+        "previous_reps": 9,
+        "intensity_unit": "%",
+        "archived_weight": 132.277356,
+        "previous_weight": 132.277356
+       },
+       {
+        "value": "60",
+        "amount": "9",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 5,
+        "previous_reps": 5,
+        "intensity_unit": "%",
+        "archived_weight": 132.277356,
+        "previous_weight": 132.277356
+       }
+      ],
+      "type": "Machine",
+      "uniq": "98d56183-02b3-440b-bfe1-b4edf86b407a",
+      "notes": "Press *** to switch to alternate accessories",
+      "video": "youtube://v/zMAMA9_Ehn8\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Back"
+      ],
+      "target_type": "reps",
+      "alternatives": [
+       {
+        "id": "86781073-0d16-4800-ac81-446fc645803d",
+        "name": "Bent Over Row (Dumbbell)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Dumbbell",
+        "video": "youtube://v/VP_f9V854og",
+        "source": "master",
+        "muscles": [
+         "Back"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Upper Back",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Lats",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Biceps",
+          "percent": "40%"
+         }
+        ]
+       },
+       {
+        "id": "3f0ae004-c292-429b-a367-4987dbef7942",
+        "name": "Pull-Up (Weighted)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Dumbbell",
+        "video": "youtube://v/HuuyDNGrCI8",
+        "source": "master",
+        "muscles": [
+         "Back"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Lats",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Upper Back",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Biceps",
+          "percent": "40%"
+         }
+        ]
+       },
+       {
+        "id": "857557cc-8ed1-4b23-94d9-6e1535163131",
+        "name": "Seated Row (Machine)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Machine",
+        "video": "youtube://v/TeFo51Q_Nsc",
+        "source": "master",
+        "muscles": [
+         "Back"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Upper Back",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Lats",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Biceps",
+          "percent": "40%"
+         }
+        ]
+       }
+      ],
+      "muscles_list": [
+       {
+        "muscle": "Lats",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Upper Back",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Biceps",
+        "percent": "40%"
+       }
+      ]
+     },
+     {
+      "id": "078d9dac-16d5-4182-a3f2-40cff35c5336",
+      "name": "Bench Press (Dumbbell)",
+      "sets": [
+       {
+        "value": "16",
+        "amount": "12",
+        "custom": true,
+        "source": "master",
+        "skipped": false,
+        "maxValue": {
+         "TopWeight": 39.6832068
+        },
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 12,
+        "previous_reps": 12,
+        "archived_weight": 39.6832068,
+        "previous_weight": 35.2739616
+       },
+       {
+        "value": "18",
+        "amount": "12",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 12,
+        "previous_reps": 12,
+        "archived_weight": 39.6832068,
+        "previous_weight": 35.2739616
+       },
+       {
+        "value": "18",
+        "amount": "12",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 12,
+        "previous_reps": 12,
+        "archived_weight": 39.6832068,
+        "previous_weight": 35.2739616
+       },
+       {
+        "value": "18",
+        "amount": "12",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 12,
+        "archived_weight": 39.6832068,
+        "previous_weight": 35.2739616
+       }
+      ],
+      "type": "Dumbbell",
+      "uniq": "1b634798-03b1-4370-9a04-19a829053fb3",
+      "video": "https://s3.boostcamp.app/master-exercise/102625578.mp4",
+      "custom": true,
+      "source": "master",
+      "muscles": [
+       "Chest"
+      ],
+      "thumbnail": "https://s3.amazonaws.com/s3.boostcamp.app/master_exercise/1078d9dac-16d5-4182-a3f2-40cff35c5336.jpg",
+      "created_at": "2022-02-08T07:04:07.950Z",
+      "equipments": [
+       "Dumbbell"
+      ],
+      "updated_at": "2022-02-08T07:04:07.950Z",
+      "finished_at": "2025-11-10T14:39:59.614Z",
+      "target_type": "reps",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Chest",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Triceps",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Front Delts",
+        "percent": "40%"
+       }
+      ],
+      "isAddForFuture": false
+     },
+     {
+      "id": "1aadcd0c-e435-4458-97c4-3364e1e8439f",
+      "name": "Bicep Curl (Dumbbell)",
+      "sets": [
+       {
+        "value": "14",
+        "amount": "10",
+        "custom": true,
+        "source": "coach",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 8,
+        "previous_reps": 10,
+        "archived_weight": 26.4554712,
+        "previous_weight": 30.8647164
+       },
+       {
+        "value": "12",
+        "amount": "8",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 4,
+        "previous_reps": 7,
+        "archived_weight": 26.4554712,
+        "previous_weight": 30.8647164
+       }
+      ],
+      "type": "Dumbbell",
+      "uniq": "7c7640f3-01da-4c99-8e6d-7059cd4a9903",
+      "video": "https://s3.boostcamp.app/master-exercise/1670579801.mp4",
+      "custom": true,
+      "source": "coach",
+      "muscles": [
+       "Arms"
+      ],
+      "finished_at": "2025-11-13T14:46:31.655Z",
+      "target_type": "reps_range",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Biceps",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Forearms",
+        "percent": "20%"
+       }
+      ],
+      "isAddForFuture": false
+     }
+    ],
+    "legacy": {},
+    "title": "Week 2 \u00b7 Day 1",
+    "type": 2,
+    "name": "5/3/1 Boring But Big"
+   }
+  ],
+  "2025-11-17": [
+   {
+    "program_id": "5631a438-57e6-452e-8457-b7ac398ae97e",
+    "id": "siKYBO8JmLdF7U1N",
+    "finished_at": "2025-11-17 15:49:15",
+    "day": 3,
+    "week": 0,
+    "workout": "{}",
+    "records": [
+     {
+      "id": "402cd6e4-6651-4298-a7a8-ffcca4a0d0ac",
+      "name": "Squat (Barbell)",
+      "sets": [
+       {
+        "value": "72.5",
+        "amount": "5",
+        "custom": false,
+        "source": "coach",
+        "target": 5,
+        "skipped": false,
+        "intensity": 65,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 5,
+        "previous_reps": 5,
+        "target_weight": 157.63,
+        "intensity_unit": "%",
+        "archived_weight": 159.8351385,
+        "previous_weight": 170.8582515
+       },
+       {
+        "value": "82.5",
+        "amount": "5",
+        "custom": false,
+        "source": "coach",
+        "target": 5,
+        "skipped": false,
+        "intensity": 75,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 5,
+        "previous_reps": 3,
+        "target_weight": 181.88,
+        "intensity_unit": "%",
+        "archived_weight": 181.8813645,
+        "previous_weight": 198.416034
+       },
+       {
+        "value": "92.5",
+        "amount": "5+",
+        "custom": false,
+        "source": "coach",
+        "target": 5,
+        "skipped": false,
+        "maxValue": {
+         "Estimated1RM": 244.7131086
+        },
+        "intensity": 85,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_max",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 7,
+        "previous_reps": 3,
+        "target_weight": 206.13,
+        "intensity_unit": "%",
+        "archived_weight": 203.9275905,
+        "previous_weight": 220.46226
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "1304ba79-efc2-456f-93da-37ce51ff43b4",
+      "notes": "Perform warm-up sets beforehand. Read Jim Wendler's 5/3/1 BBB guide for more details.",
+      "video": "youtube://v/QmZAiBqPvZw\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Legs"
+      ],
+      "target_type": "reps",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Quadriceps",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "80%"
+       },
+       {
+        "muscle": "Hamstrings",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Adductors",
+        "percent": "40%"
+       },
+       {
+        "muscle": "Abs",
+        "percent": "20%"
+       }
+      ]
+     },
+     {
+      "id": "402cd6e4-6651-4298-a7a8-ffcca4a0d0ac",
+      "name": "Squat",
+      "sets": [
+       {
+        "value": "55",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 121,
+        "intensity_unit": "exercise",
+        "archived_weight": 121.254243,
+        "previous_weight": 121.254243,
+        "intensity_dependency_exercise": "Squat (Barbell)"
+       },
+       {
+        "value": "55",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 121,
+        "intensity_unit": "exercise",
+        "archived_weight": 121.254243,
+        "previous_weight": 121.254243,
+        "intensity_dependency_exercise": "Squat (Barbell)"
+       },
+       {
+        "value": "55",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 121,
+        "intensity_unit": "exercise",
+        "archived_weight": 121.254243,
+        "previous_weight": 121.254243,
+        "intensity_dependency_exercise": "Squat (Barbell)"
+       },
+       {
+        "value": "55",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 121,
+        "intensity_unit": "exercise",
+        "archived_weight": 121.254243,
+        "previous_weight": 121.254243,
+        "intensity_dependency_exercise": "Squat (Barbell)"
+       },
+       {
+        "value": "55",
+        "amount": "10",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": false,
+        "intensity": 50,
+        "time_unit": "seconds",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "target_weight": 121,
+        "intensity_unit": "exercise",
+        "archived_weight": 121.254243,
+        "previous_weight": 121.254243,
+        "intensity_dependency_exercise": "Squat (Barbell)"
+       }
+      ],
+      "type": "Barbell",
+      "uniq": "ca33dd27-f38c-4436-a8df-63205ce35285",
+      "notes": "Press *** to switch to Deadlift. If you switch, make sure to switch secondary exercises for other days as well. Read Jim Wendler's BBB guide for details.",
+      "video": "youtube://v/QmZAiBqPvZw\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Legs"
+      ],
+      "target_type": "reps",
+      "alternatives": [
+       {
+        "id": "e97d2995-fbed-491d-b3e5-1f102bb0f649",
+        "day": 1,
+        "name": "Deadlift",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 149,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Deadlift (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 149,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Deadlift (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 149,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Deadlift (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 149,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Deadlift (Barbell)"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": 50,
+          "target_type": "reps",
+          "target_weight": 149,
+          "intensity_unit": "exercise",
+          "intensity_dependency_exercise": "Deadlift (Barbell)"
+         }
+        ],
+        "type": "Barbell",
+        "week": 0,
+        "notes": "Press *** to switch to Squat. If you switch, make sure to switch secondary exercises for other days as well. Read Jim Wendler's BBB guide for details.",
+        "video": "youtube://v/1nvAUJVmFZY\n",
+        "source": "coach",
+        "muscles": [
+         "Back",
+         "Legs"
+        ],
+        "program": {
+         "title": "5/3/1 Boring But Big (Copy)"
+        },
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Quadriceps",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Glutes",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Hamstrings",
+          "percent": "40%"
+         },
+         {
+          "muscle": "Lower Back",
+          "percent": "40%"
+         },
+         {
+          "muscle": "Abs",
+          "percent": "20%"
+         }
+        ]
+       },
+       {
+        "id": "f8e5bbfa-39c5-4cd8-a39e-8a9e3903373d",
+        "name": "Front Squat (Barbell)",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Barbell",
+        "video": "youtube://v/CE0uSrr4SYQ\n",
+        "source": "master",
+        "muscles": [
+         "Legs"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Quadriceps",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Glutes",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Lower Back",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Hamstrings",
+          "percent": "60%"
+         }
+        ]
+       },
+       {
+        "id": "161a7891-5739-4ef0-8a5a-113cc390f1e7",
+        "name": "Stiff Leg Deadlift",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "intensity": null,
+          "target_type": "reps",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Barbell",
+        "video": "youtube://v/CN_7cz3P-1U\n",
+        "source": "master",
+        "muscles": [
+         "Back",
+         "Legs"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Hamstrings",
+          "percent": "100%"
+         },
+         {
+          "muscle": "Glutes",
+          "percent": "80%"
+         },
+         {
+          "muscle": "Lower Back",
+          "percent": "60%"
+         },
+         {
+          "muscle": "Abs",
+          "percent": "40%"
+         }
+        ]
+       }
+      ],
+      "muscles_list": [
+       {
+        "muscle": "Quadriceps",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "80%"
+       },
+       {
+        "muscle": "Hamstrings",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Adductors",
+        "percent": "40%"
+       },
+       {
+        "muscle": "Abs",
+        "percent": "20%"
+       }
+      ]
+     },
+     {
+      "id": "830cab9a-434e-43a4-8e2e-738d070fcbaa",
+      "name": "Abs Crunch (Weighted)",
+      "sets": [
+       {
+        "value": "",
+        "amount": "",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "previous_weight": 11.023113
+       },
+       {
+        "value": "",
+        "amount": "",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "previous_weight": 11.023113
+       },
+       {
+        "value": "",
+        "amount": "",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_reps": 10,
+        "intensity_unit": "%",
+        "previous_weight": 11.023113
+       },
+       {
+        "value": "",
+        "amount": "",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "intensity_unit": "%"
+       },
+       {
+        "value": "",
+        "amount": "",
+        "custom": false,
+        "source": "coach",
+        "target": 10,
+        "skipped": true,
+        "time_unit": "seconds",
+        "target_max": 20,
+        "target_min": 10,
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "intensity_unit": "%"
+       }
+      ],
+      "type": "Dumbbell",
+      "uniq": "905d106b-c389-441d-91cc-75648a943ec5",
+      "notes": "Press *** to switch to alternate accessories",
+      "video": "youtube://v/QkCt6s3TGMA\n",
+      "custom": false,
+      "source": "coach",
+      "muscles": [
+       "Core"
+      ],
+      "target_type": "reps_range",
+      "alternatives": [
+       {
+        "id": "15406838-4fe8-4dff-9b86-dc898be5411f",
+        "name": "Hanging Leg Raise",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Bodyweight",
+        "video": "youtube://v/zO9vi9bWMoU\n",
+        "source": "master",
+        "muscles": [
+         "Core"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Abs",
+          "percent": "100%"
+         }
+        ]
+       },
+       {
+        "id": "e3b192ed-1bd2-4185-ad5b-08da317f8503",
+        "name": "Cable Crunch",
+        "sets": [
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         },
+         {
+          "source": "coach",
+          "target": 10,
+          "target_max": 20,
+          "target_min": 10,
+          "target_type": "reps_range",
+          "intensity_unit": "%"
+         }
+        ],
+        "type": "Cable",
+        "video": "youtube://v/3qjoXDTuyOE",
+        "source": "master",
+        "muscles": [
+         "Core"
+        ],
+        "alternatives": [],
+        "muscles_list": [
+         {
+          "muscle": "Abs",
+          "percent": "100%"
+         }
+        ]
+       }
+      ],
+      "muscles_list": [
+       {
+        "muscle": "Abs",
+        "percent": "100%"
+       }
+      ]
+     },
+     {
+      "id": "3530cc2b-975e-4c30-a38d-bb05995edad4",
+      "name": "Leg Curl",
+      "sets": [
+       {
+        "value": "60",
+        "amount": "10",
+        "custom": true,
+        "source": "coach",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "archived_weight": 132.277356,
+        "previous_weight": 132.277356
+       },
+       {
+        "value": "60",
+        "amount": "10",
+        "custom": true,
+        "source": "coach",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "archived_weight": 132.277356,
+        "previous_weight": 132.277356
+       },
+       {
+        "value": "60",
+        "amount": "10",
+        "custom": true,
+        "source": "coach",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps_range",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 10,
+        "previous_reps": 10,
+        "archived_weight": 132.277356,
+        "previous_weight": 132.277356
+       }
+      ],
+      "type": "Machine",
+      "uniq": "4fabbdef-01cd-43cd-b901-7d0dadfb0e88",
+      "video": "https://s3.boostcamp.app/master-exercise/3493337238.mp4",
+      "custom": true,
+      "source": "coach",
+      "muscles": [
+       "Legs"
+      ],
+      "finished_at": "2025-10-28T14:43:10.288Z",
+      "target_type": "reps_range",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Hamstrings",
+        "percent": "100%"
+       }
+      ],
+      "isAddForFuture": false
+     },
+     {
+      "id": "050fcb94-3664-448a-880b-f547bc543d64",
+      "name": "Leg Press",
+      "sets": [
+       {
+        "value": "150",
+        "amount": "10",
+        "custom": true,
+        "source": "master",
+        "skipped": false,
+        "maxValue": {
+         "TopWeight": 352.739616
+        },
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 8,
+        "previous_reps": 10,
+        "archived_weight": 352.739616,
+        "previous_weight": 330.69339
+       },
+       {
+        "value": "160",
+        "amount": "8",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 8,
+        "previous_reps": 10,
+        "archived_weight": 352.739616,
+        "previous_weight": 330.69339
+       },
+       {
+        "value": "160",
+        "amount": "8",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 8,
+        "previous_reps": 10,
+        "archived_weight": 352.739616,
+        "previous_weight": 330.69339
+       }
+      ],
+      "type": "Machine",
+      "uniq": "d7dd2da8-df83-4f86-9eb7-b6974cbb834f",
+      "video": "https://s3.boostcamp.app/master-exercise/3738067521.mp4",
+      "custom": true,
+      "source": "master",
+      "muscles": [
+       "Legs"
+      ],
+      "thumbnail": "https://s3.amazonaws.com/s3.boostcamp.app/master_exercise/6050fcb94-3664-448a-880b-f547bc543d64.jpg",
+      "created_at": "2022-02-08T07:04:32.558Z",
+      "equipments": [
+       "Machine"
+      ],
+      "updated_at": "2022-02-08T07:04:32.558Z",
+      "finished_at": "2025-11-03T14:51:45.474Z",
+      "target_type": "reps",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Quadriceps",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Hamstrings",
+        "percent": "60%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "40%"
+       },
+       {
+        "muscle": "Abductors",
+        "percent": "20%"
+       }
+      ],
+      "isAddForFuture": false
+     },
+     {
+      "id": "e589c33b-905e-420e-99be-e2289617c4e0",
+      "name": "Back Extension",
+      "sets": [
+       {
+        "value": "20",
+        "amount": "15",
+        "custom": true,
+        "source": "master",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 15,
+        "previous_reps": 15,
+        "archived_weight": 44.092452,
+        "previous_weight": 44.092452
+       },
+       {
+        "value": "20",
+        "amount": "15",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 15,
+        "previous_reps": 15,
+        "archived_weight": 44.092452,
+        "previous_weight": 44.092452
+       },
+       {
+        "value": "20",
+        "amount": "15",
+        "custom": true,
+        "source": "user",
+        "skipped": false,
+        "time_unit": "minutes",
+        "valueEmpty": false,
+        "amountEmpty": false,
+        "target_type": "reps",
+        "weight_unit": "kg",
+        "archived_rpe": 0,
+        "previous_rpe": 0,
+        "archived_reps": 15,
+        "previous_reps": 15,
+        "archived_weight": 44.092452,
+        "previous_weight": 44.092452
+       }
+      ],
+      "type": "Machine",
+      "uniq": "cd46ed01-c154-4a71-b7e4-0b25e5f8f7d9",
+      "video": "https://s3.boostcamp.app/master-exercise/1549403945.mp4",
+      "custom": true,
+      "source": "master",
+      "muscles": [
+       "Back"
+      ],
+      "thumbnail": "https://s3.amazonaws.com/s3.boostcamp.app/master_exercise/187e589c33b-905e-420e-99be-e2289617c4e0.jpg",
+      "created_at": "2022-02-08T07:03:59.589Z",
+      "equipments": [
+       "Machine"
+      ],
+      "updated_at": "2022-02-08T07:03:59.589Z",
+      "finished_at": "2025-11-12T16:04:17.388Z",
+      "target_type": "reps",
+      "alternatives": [],
+      "muscles_list": [
+       {
+        "muscle": "Lower Back",
+        "percent": "100%"
+       },
+       {
+        "muscle": "Glutes",
+        "percent": "80%"
+       }
+      ],
+      "isAddForFuture": false
+     }
+    ],
+    "legacy": {},
+    "title": "Week 1 \u00b7 Day 4",
+    "type": 2,
+    "name": "5/3/1 Boring But Big"
+   }
+  ]
+ }
+}
