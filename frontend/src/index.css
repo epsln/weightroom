@@ -193,3 +193,4 @@ code { background: var(--panel-2); border-radius: 4px; padding: 1px 5px; font-si
   padding: 8px 12px; border-bottom: 1px solid var(--grid); font-size: 0.9rem;
 }
 .liftmap-row:last-child { border-bottom: 0; }
+.axis-caption { text-align: center; margin-top: -2px; }

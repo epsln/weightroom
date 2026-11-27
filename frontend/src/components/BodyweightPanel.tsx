@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-import { api, du, fmtDate, kg, toKg, unit, wr, shortDate, tooltipStyle, ts, type BodyweightEntry } from '../api'
+import { api, du, fmtDate, kg, toKg, unit, wr, tooltipStyle, ts, type BodyweightEntry } from '../api'
 import { useAsync } from '../useAsync'
-import { DragZoom, useRange } from '../range'
+import { AxisCaption, DragZoom, useRange, useTimeAxis } from '../range'
 import { within, xDomain } from '../rangeUtils'
 
 const today = () => {
@@ -36,6 +36,7 @@ export function BodyweightPanel({ version, onChanged }: { version: number; onCha
   const entries = res.data ?? []
   const { range } = useRange()
   const data = entries.map((b) => ({ t: ts(b.date), kg: wr(b.kg) })).filter((p) => within(range, p.t))
+  const axis = useTimeAxis(data.map((p) => p.t))
 
   return (
     <section className="card">
@@ -58,7 +59,7 @@ export function BodyweightPanel({ version, onChanged }: { version: number; onCha
             <LineChart data={data} margin={{ top: 8, right: 16, bottom: 0, left: 0 }}>
               <CartesianGrid stroke="var(--grid)" vertical={false} />
               <XAxis dataKey="t" type="number" scale="time" domain={xDomain(range)} allowDataOverflow
-                tickFormatter={shortDate} stroke="var(--muted)" fontSize={12} />
+                ticks={axis.ticks} tickFormatter={axis.format} stroke="var(--muted)" fontSize={12} />
               <YAxis unit={` ${unit()}`} domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
               <Tooltip contentStyle={tooltipStyle} labelFormatter={(t) => fmtDate(new Date(Number(t)).toISOString())}
                 formatter={(v) => [du(Number(v)), 'Bodyweight']} />
@@ -66,6 +67,7 @@ export function BodyweightPanel({ version, onChanged }: { version: number; onCha
               <DragZoom />
             </LineChart>
           </ResponsiveContainer>
+          <AxisCaption axis={axis} />
         </div>
       )}
       {entries.length > 0 && (

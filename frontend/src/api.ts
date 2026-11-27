@@ -275,8 +275,6 @@ export const bigDu = (n: number | null | undefined) => (n == null ? '–' : `${b
 
 /** ISO date string → ms timestamp at local midnight. */
 export const ts = (iso: string) => new Date(`${iso.slice(0, 10)}T00:00:00`).getTime()
-export const shortDate = (t: number) =>
-  new Date(t).toLocaleDateString(undefined, { month: 'short', year: '2-digit' })
 export const tooltipStyle = { background: 'var(--panel-2)', border: '1px solid var(--border)', borderRadius: 8 }
 
 export function fmtDate(iso: string): string {

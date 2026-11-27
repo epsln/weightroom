@@ -2,10 +2,10 @@ import { useState } from 'react'
 import {
   CartesianGrid, ComposedChart, Line, ResponsiveContainer, Scatter, Tooltip, XAxis, YAxis,
 } from 'recharts'
-import { api, du, fmtDate, unit, wr, LIFT_LABEL, LIFTS, shortDate, tooltipStyle, ts, type ActualMax, type Lift } from '../api'
+import { api, du, fmtDate, unit, wr, LIFT_LABEL, LIFTS, tooltipStyle, ts, type ActualMax, type Lift } from '../api'
 import { LIFT_COLOR } from '../colors'
 import { useAsync } from '../useAsync'
-import { DragZoom, useRange } from '../range'
+import { AxisCaption, DragZoom, useRange, useTimeAxis } from '../range'
 import { within, xDomain } from '../rangeUtils'
 
 interface Pt {
@@ -38,6 +38,7 @@ export function ActualMaxChart({ version, onOpen }: { version: number; onOpen: (
     t: ts(m.date), w: wr(m.weight_kg), reps: m.reps, best: wr(m.running_best_kg), is_pr: m.is_pr, session_id: m.session_id,
   }))
   const pts = all.filter((p) => within(range, p.t))
+  const axis = useTimeAxis(pts.map((p) => p.t))
   const prs = pts.filter((p) => p.is_pr)
   const other = pts.filter((p) => !p.is_pr)
   const color = LIFT_COLOR[lift]
@@ -70,7 +71,7 @@ export function ActualMaxChart({ version, onOpen }: { version: number; onOpen: (
             <ComposedChart data={pts} margin={{ top: 8, right: 16, bottom: 0, left: 0 }}>
               <CartesianGrid stroke="var(--grid)" vertical={false} />
               <XAxis dataKey="t" type="number" scale="time" domain={xDomain(range)} allowDataOverflow
-                tickFormatter={shortDate} stroke="var(--muted)" fontSize={12} />
+                ticks={axis.ticks} tickFormatter={axis.format} stroke="var(--muted)" fontSize={12} />
               <YAxis unit={` ${unit()}`} domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={64} />
               <Tooltip content={HeaviestTooltip} />
               <Line type="stepAfter" dataKey="best" name="Running best" stroke={color} strokeDasharray="4 3"
@@ -82,6 +83,7 @@ export function ActualMaxChart({ version, onOpen }: { version: number; onOpen: (
               <DragZoom />
             </ComposedChart>
           </ResponsiveContainer>
+          <AxisCaption axis={axis} />
         </div>
       )}
     </section>

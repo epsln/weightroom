@@ -1,9 +1,9 @@
 import {
   CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts'
-import { api, bigDu, bigKg, fmtDate, shortDate, tooltipStyle, ts, unit, wr, type Sex, type TotalPoint } from '../api'
+import { api, bigDu, bigKg, fmtDate, tooltipStyle, ts, unit, wr, type Sex, type TotalPoint } from '../api'
 import { useAsync } from '../useAsync'
-import { DragZoom, useRange } from '../range'
+import { AxisCaption, DragZoom, useRange, useTimeAxis } from '../range'
 import { within, xDomain } from '../rangeUtils'
 
 export function TotalChart({ version, formula, onSettings }: { version: number; formula: Sex; onSettings: () => void }) {
@@ -16,6 +16,7 @@ export function TotalChart({ version, formula, onSettings }: { version: number; 
     dotsEst: p.dots_estimated,
     dotsAct: p.dots_actual,
   }))
+  const axis = useTimeAxis(data.map((p) => p.t))
   const last = res.data?.at(-1)
   const hasDots = data.some((d) => d.dotsEst != null || d.dotsAct != null)
 
@@ -45,7 +46,7 @@ export function TotalChart({ version, formula, onSettings }: { version: number; 
           <ComposedChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: 0 }}>
             <CartesianGrid stroke="var(--grid)" vertical={false} />
             <XAxis dataKey="t" type="number" scale="time" domain={xDomain(range)} allowDataOverflow
-              tickFormatter={shortDate} stroke="var(--muted)" fontSize={12} />
+              ticks={axis.ticks} tickFormatter={axis.format} stroke="var(--muted)" fontSize={12} />
             <YAxis yAxisId="kg" unit={` ${unit()}`} domain={['auto', 'auto']} stroke="var(--muted)" fontSize={12} width={70} />
             {hasDots && (
               <YAxis yAxisId="dots" orientation="right" domain={['auto', 'auto']} stroke="var(--muted)"
@@ -66,6 +67,7 @@ export function TotalChart({ version, formula, onSettings }: { version: number; 
             <DragZoom />
           </ComposedChart>
         </ResponsiveContainer>
+        <AxisCaption axis={axis} />
       </div>
     </section>
   )
